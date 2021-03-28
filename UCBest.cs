@@ -28,7 +28,7 @@ namespace KelimeOyunu
         public void oyuncuListele() // gonderen kişinin tüm faturalarını listeleme
         {
             baglanti();
-            string komut = "select İsim,Puan,KalanSure,Tarih from tbl_oyuncular";
+            string komut = "SELECT İsim,Puan,KalanSure,Tarih FROM tbl_oyuncular ORDER BY puan DESC limit 5";
             MySqlDataAdapter da = new MySqlDataAdapter(komut, bag);
             DataTable dt = new DataTable();
             da.Fill(dt);

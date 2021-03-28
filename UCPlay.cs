@@ -255,6 +255,14 @@ namespace KelimeOyunu
             fs.Close();
             File.AppendAllText(file, Environment.NewLine + writeText);
         }
+        public void scoreUpdate()// guncelleme
+        {
+            baglanti();
+            string komut = "SELECT İsim,Puan,KalanSure,Tarih FROM tbl_oyuncular ORDER BY puan DESC limit 5";
+            MySqlDataAdapter da = new MySqlDataAdapter(komut, bag);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+        }
         private void UCPlay_Load(object sender, EventArgs e)
         {
             guna2Panel5.Visible = false;
