@@ -47,8 +47,8 @@ namespace KelimeOyunu
             bag = new MySqlConnection("Server=127.0.0.1;Database=kelimeoyunu;user=root;Pwd=1562;SslMode=none");
             bag.Open();
 
-        }  
-        public void soruSec()
+        }
+        public void soruSec() //veritabanindan soru secmek icin calisir
         {
             baglanti();
             MySqlCommand komut3 = new MySqlCommand();
@@ -74,7 +74,7 @@ namespace KelimeOyunu
                 dr.Close();
             }
         }
-        public void yeniSoru()
+        public void yeniSoru() //soruya gore sirayla sorularin gelmesi icin calisir
         {
             try
             {
@@ -96,7 +96,7 @@ namespace KelimeOyunu
                     kelime = kelimeler[1];
                     soruPuani = kelime.Length * 100;
                     soruPuanLbl.Text = soruPuani.ToString();
-                  
+
                 }
                 if (soru == 3)
                 {
@@ -104,7 +104,7 @@ namespace KelimeOyunu
                     guna2Panel5.Visible = true;
                     soruPuani = kelime.Length * 100;
                     soruPuanLbl.Text = soruPuani.ToString();
-                 
+
                 }
                 if (soru == 4)
                 {
@@ -112,7 +112,7 @@ namespace KelimeOyunu
                     guna2Panel5.Visible = true;
                     soruPuani = kelime.Length * 100;
                     soruPuanLbl.Text = soruPuani.ToString();
-                   
+
                 }
                 if (soru == 5)
                 {
@@ -120,7 +120,7 @@ namespace KelimeOyunu
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true;
                     soruPuani = kelime.Length * 100;
                     soruPuanLbl.Text = soruPuani.ToString();
-                  
+
                 }
                 if (soru == 6)
                 {
@@ -128,7 +128,7 @@ namespace KelimeOyunu
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true;
                     soruPuani = kelime.Length * 100;
                     soruPuanLbl.Text = soruPuani.ToString();
-                   
+
                 }
                 if (soru == 7)
                 {
@@ -136,15 +136,15 @@ namespace KelimeOyunu
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true; guna2Panel7.Visible = true;
                     soruPuani = kelime.Length * 100;
                     soruPuanLbl.Text = soruPuani.ToString();
-                   
+
                 }
                 if (soru == 8)
                 {
-                    kelime = kelimeler[7];        
+                    kelime = kelimeler[7];
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true; guna2Panel7.Visible = true;
                     soruPuani = kelime.Length * 100;
                     soruPuanLbl.Text = soruPuani.ToString();
-               
+
                 }
                 if (soru == 9)
                 {
@@ -152,7 +152,7 @@ namespace KelimeOyunu
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true; guna2Panel7.Visible = true; guna2Panel8.Visible = true;
                     soruPuani = kelime.Length * 100;
                     soruPuanLbl.Text = soruPuani.ToString();
-                   
+
                 }
                 if (soru == 10)
                 {
@@ -160,7 +160,7 @@ namespace KelimeOyunu
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true; guna2Panel7.Visible = true; guna2Panel8.Visible = true;
                     soruPuani = kelime.Length * 100;
                     soruPuanLbl.Text = soruPuani.ToString();
-                   
+
                 }
                 if (soru == 11)
                 {
@@ -168,7 +168,7 @@ namespace KelimeOyunu
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true; guna2Panel7.Visible = true; guna2Panel8.Visible = true; guna2Panel9.Visible = true;
                     soruPuani = kelime.Length * 100;
                     soruPuanLbl.Text = soruPuani.ToString();
-                 
+
                 }
                 if (soru == 12)
                 {
@@ -176,7 +176,7 @@ namespace KelimeOyunu
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true; guna2Panel7.Visible = true; guna2Panel8.Visible = true; guna2Panel9.Visible = true;
                     soruPuani = kelime.Length * 100;
                     soruPuanLbl.Text = soruPuani.ToString();
-                 
+
                 }
                 if (soru == 13)
                 {
@@ -198,10 +198,10 @@ namespace KelimeOyunu
                 cevapBtn.Enabled = true;
                 harfAlBtn.Enabled = true;
                 sonrakiBtn.Enabled = false;
-                k = 0; // rasgele harflerin döngüsü için değişen değişken
-                harfler = new char[kelime.Length];
-                rasgeleSayilar = new int[harfler.Length];
-                for (int i = 0; i < rasgeleSayilar.Length; i++) // içine -1 atıyorum 0 olunca döngü sonsuz döngüye giriyor.
+                k = 0; // rasgele harflerin dongusu icin degisen degisken
+                harfler = new char[kelime.Length]; //kelime uzunlugu kadar harf dizisi olusturulur
+                rasgeleSayilar = new int[harfler.Length]; //rastgele sayilar dizisi doldurulur
+                for (int i = 0; i < rasgeleSayilar.Length; i++)
                 {
                     rasgeleSayilar[i] = -1;
                 }
@@ -222,7 +222,7 @@ namespace KelimeOyunu
                 ;
             }
         }
-        public void kisiEkle() 
+        public void kisiEkle() //oyunculari veritabanina ekler
         {
             try
             {
@@ -232,7 +232,7 @@ namespace KelimeOyunu
                 DateTime tarih = DateTime.Now.Date;
                 string format = "yyyy-MM-dd"; //referans http://furkanalniak.com/c-veri-tabanina-uygun-datetime-formati/
                 var zamanim = tarih.ToString(format);
-                string eklemekomut = "insert into tbl_oyuncular(İsim,Puan,KalanSure,Tarih) values ('" + UCHome.isim + "','" + toplamp.ToString()+ "','" + sure + "','" + zamanim+ "')";
+                string eklemekomut = "insert into tbl_oyuncular(İsim,Puan,KalanSure,Tarih) values ('" + UCHome.isim + "','" + toplamp.ToString() + "','" + sure + "','" + zamanim + "')";
                 komut = new MySqlCommand(eklemekomut, bag);
                 dr = komut.ExecuteReader();
                 while (dr.Read())
@@ -246,33 +246,10 @@ namespace KelimeOyunu
                 MessageBox.Show(ex.Message);
             }
         }
-        public void bastanBaslat()
-        {
-            guna2Panel5.Visible = false;
-            guna2Panel6.Visible = false;
-            guna2Panel7.Visible = false;
-            guna2Panel8.Visible = false;
-            guna2Panel9.Visible = false;
-            guna2Panel10.Visible = false;
-            timePanel1.Visible = false;
-            toplamPuan.Text = "Toplam Puan:" + toplamp;
-            timer2Lbl.Text = "04:00";
-            timer1Lbl.Text = "0:20";
-            sorusayisi = 0;
-            soru = 1;
-            timer1.Enabled = false;
-            timer1.Interval = 1000;
-            sonrakiBtn.Visible = false;
-            cevapTxt.Enabled = false;
-            harfAlBtn.Enabled = false;
-            Array.Clear(sorular, 0, sorular.Length);
-            Array.Clear(kelimeler, 0, kelimeler.Length);
-            Array.Clear(rasgeleSayilar, 0, rasgeleSayilar.Length);
-        }
-        public void txtaydet()
+        public void txtaydet() //oyunculari text dosyasina kaydeder
         {
             string file = "C:/Users/İrem Akalp/Source/Repos/KelimeOyunu/bin/Debug/Belgeler/oyuncular.txt";
-            string writeText ="İsim: "+ UCHome.isim + "  Puan: " + toplamp + " Kalan Süre: " + sure + "  Oynandığı Tarih: " + DateTime.Now.ToString();
+            string writeText = "İsim: " + UCHome.isim + "  Puan: " + toplamp + " Kalan Süre: " + sure + "  Oynandığı Tarih: " + DateTime.Now.ToString();
 
             FileStream fs = new FileStream(file, FileMode.OpenOrCreate, FileAccess.Write);
             fs.Close();
@@ -301,11 +278,12 @@ namespace KelimeOyunu
             cevapBtn.Enabled = false;
             timer2.Enabled = false;
             timer2.Interval = 1000;
-        }   
+        }
         public void rasgeleHarf(int rasgeleHarf, char alinanHarf)
         {
-            soruPuani -= 100;
+            soruPuani -= 100; //harf alindiginda sorudan puan duser
             soruPuanLbl.Text = soruPuani.ToString();
+            // gelen rasgeleHarf indexine gore labellarin gorunmesi icin calisir
             if (rasgeleHarf == 0)
             {
                 harf1Lbl.Text = alinanHarf.ToString();
@@ -352,14 +330,14 @@ namespace KelimeOyunu
             string tahmin = cevapTxt.Text;
             if (tahmin.ToLower() == kelime.ToLower())
             {
-                if (soru >= 15)
+                if (soru >= 15) //tum sorular cevaplandiysa calisan kisim
                 {
                     toplamp += soruPuani;
                     toplamPuanLbl.Text = "Toplam Puan " + " " + toplamp.ToString();
                     MessageBox.Show("Oyun bitti." + "\n" + "İsim: " + UCHome.isim + "\n" + "Toplam Puanınız: " + toplamp + "\n" + "Kalan Süre: " + sure + "\n" + "Tarih:" + DateTime.Now.ToString());
                     kisiEkle();
                     txtaydet();
-                    UCHome uCHome = new UCHome();
+                    UCHome uCHome = new UCHome(); //oyun bittiginde baslangic sayfasina geri doner
                     addUserControl(uCHome);
                     baslaBtn.Visible = true;
                     return;
@@ -382,12 +360,12 @@ namespace KelimeOyunu
                 MessageBox.Show(" Yanlış bildiniz! Cevap: " + kelime + " " + " Kazanılan Puan : 0");
                 cevapTxt.Text = "";
                 basla = true;
-                if (soru >= 15) // yanlış bilerek biter ise
+                if (soru >= 15) // soruyu yanlis bilerek oyun biterse
                 {
                     MessageBox.Show("Oyun bitti." + UCHome.isim + "\n" + "Toplam Puanınız : " + toplamp.ToString() + "\n" + " Kalan Süre:" + sure + "\n" + "Tarih:" + DateTime.Now.ToString());
                     kisiEkle();
                     txtaydet();
-                    UCHome uCHome = new UCHome();
+                    UCHome uCHome = new UCHome(); //oyun bittiginde baslangic sayfasina geri doner
                     addUserControl(uCHome);
                     baslaBtn.Visible = true;
                     return;
@@ -418,12 +396,12 @@ namespace KelimeOyunu
         }
         private void harfAlBtn_Click_1(object sender, EventArgs e)
         {
-            switch (soru)
+            switch (soru) //gelen soruya gore kelimeler belirlenir ve harf ona gore secilir
             {
                 case 1:
                     {
                         harfler = kelime.ToCharArray();
-                        int rastegele = r.Next(0, harfler.Length);
+                        int rastegele = r.Next(0, harfler.Length); //kelime uzunlugu kadar rastgele sayi uretilir ve bir dizide tutulur
                         while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
                             rastegele = r.Next(0, harfler.Length);
@@ -431,7 +409,7 @@ namespace KelimeOyunu
                         }
                         rasgeleSayilar[k] = rastegele;
                         char alinanHarf = harfler[rastegele];
-                        rasgeleHarf(rastegele, alinanHarf);
+                        rasgeleHarf(rastegele, alinanHarf); // labellarin gelecegi metot cagirilir
 
                         if (k < harfler.Length - 1)
                         {
