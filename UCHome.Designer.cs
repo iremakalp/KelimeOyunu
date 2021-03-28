@@ -31,7 +31,6 @@ namespace KelimeOyunu
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCHome));
             this.ucHomePanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.adTxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.baslaBtn = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -64,7 +63,6 @@ namespace KelimeOyunu
             // 
             this.ucHomePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ucHomePanel.BackgroundImage")));
             this.ucHomePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ucHomePanel.Controls.Add(this.guna2HtmlLabel2);
             this.ucHomePanel.Controls.Add(this.guna2HtmlLabel1);
             this.ucHomePanel.Controls.Add(this.adTxt);
             this.ucHomePanel.Controls.Add(this.baslaBtn);
@@ -86,27 +84,18 @@ namespace KelimeOyunu
             this.ucHomePanel.Size = new System.Drawing.Size(766, 484);
             this.ucHomePanel.TabIndex = 2;
             // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(63, 270);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(376, 23);
-            this.guna2HtmlLabel2.TabIndex = 32;
-            this.guna2HtmlLabel2.Text = "belirli süre içerisinde bulması gereken bir oyundur. \r\n";
-            // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Emoji", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(63, 241);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(24, 238);
+            this.guna2HtmlLabel1.MaximumSize = new System.Drawing.Size(600, 100);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(452, 23);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(600, 52);
             this.guna2HtmlLabel1.TabIndex = 31;
-            this.guna2HtmlLabel1.Text = "Sözlük anlamları verilen kelimelerin yarışmacılar tarafından \r\n";
+            this.guna2HtmlLabel1.Text = "Sözlük anlamları verilen kelimelerin yarışmacılar tarafından belirli süre içerisi" +
+    "nde bulması gereken bir oyundur. \r\n";
             // 
             // adTxt
             // 
@@ -130,11 +119,12 @@ namespace KelimeOyunu
             this.adTxt.Location = new System.Drawing.Point(398, 312);
             this.adTxt.Name = "adTxt";
             this.adTxt.PasswordChar = '\0';
-            this.adTxt.PlaceholderText = "                        Adınız";
+            this.adTxt.PlaceholderText = "Adınız";
             this.adTxt.SelectedText = "";
             this.adTxt.ShadowDecoration.Parent = this.adTxt;
             this.adTxt.Size = new System.Drawing.Size(184, 40);
             this.adTxt.TabIndex = 26;
+            this.adTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.adTxt.TextChanged += new System.EventHandler(this.adTxt_TextChanged);
             // 
             // baslaBtn
@@ -328,9 +318,6 @@ namespace KelimeOyunu
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox adTxt;
         private Guna.UI2.WinForms.Guna2ImageButton baslaBtn;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

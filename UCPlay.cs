@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,17 +17,20 @@ namespace KelimeOyunu
         MySqlConnection bag;
         MySqlCommand komut;
         MySqlDataReader dr;
-        int toplamP = 0;
+        int toplamp;
         string[] sorular = new string[14];
         string[] kelimeler = new string[14];
         int j = 0;
-        int sorusayisi,soru, toplamp;
+        int sorusayisi,soru;
         string kelime;
         int soruPuani = 0;
         bool basla;
         Random r = new Random();
-        int harf;
         int[] rasgeleSayilar;
+        char[] harfler;
+        int k,sansayac,dksayac;
+        byte kalanSure = 20;
+        string sure;
         public UCPlay()
         {
             InitializeComponent();
@@ -72,48 +76,6 @@ namespace KelimeOyunu
         }
         public void yeniSoru()
         {
-           
-        }
-        private void UCPlay_Load(object sender, EventArgs e)
-        {
-            guna2Panel5.Visible = false;
-            guna2Panel6.Visible = false;
-            guna2Panel7.Visible = false;
-            guna2Panel8.Visible = false;
-            guna2Panel9.Visible = false;
-            guna2Panel10.Visible = false;
-            toplamPuan.Text = "Toplam Puan:" + toplamP;
-            timer2.Interval = 1000;
-            timer1.Interval = 20;
-            timer2Lbl.Text = "04:00";
-            timer1Lbl.Text = "0:20";
-            sorusayisi = 0;
-            soru = 1;
-            basla = true;
-            soruSec();
-        }
-        private void bitirBtn_Click(object sender, EventArgs e)
-        {
-            DialogResult dialog = new DialogResult();
-            dialog = MessageBox.Show("Programdan çıkılsın mı?", "ÇIKIŞ", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
-            {
-                Home.guna2Panel1.Enabled = true;
-                UCHome ucHome_ = new UCHome();
-                addUserControl(ucHome_);
-                ucHome_.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Çıkış yapılmadı");
-            }
-        }
-        private void baslaBtn_Click(object sender, EventArgs e)
-        {
-           
-            bitirBtn.Visible = true;
-            panel1.Visible = true;       
             try
             {
                 if (basla == true)
@@ -126,115 +88,124 @@ namespace KelimeOyunu
                 if (soru == 1)
                 {
                     kelime = kelimeler[0];
-
-                    soruPuani = 400;
-                    toplamPuanLbl.Text = toplamp.ToString() + "  /  " + soruPuani.ToString();
+                    soruPuani = kelime.Length * 100;
+                    soruPuanLbl.Text = soruPuani.ToString();
                 }
                 if (soru == 2)
                 {
                     kelime = kelimeler[1];
-                    soruPuani = 400;
-                    toplamPuanLbl.Text = toplamp.ToString() + "  /  " + soruPuani.ToString();
+                    soruPuani = kelime.Length * 100;
+                    soruPuanLbl.Text = soruPuani.ToString();
+                  
                 }
                 if (soru == 3)
                 {
                     kelime = kelimeler[2];
                     guna2Panel5.Visible = true;
-                    soruPuani = 500;
-                    toplamPuanLbl.Text = toplamp.ToString() + "  /  " + soruPuani.ToString();
+                    soruPuani = kelime.Length * 100;
+                    soruPuanLbl.Text = soruPuani.ToString();
+                 
                 }
                 if (soru == 4)
                 {
                     kelime = kelimeler[3];
-                    for (int i = 0; i < kelime.Length; i++)
-                    {
-                        guna2HtmlLabel1.Text += "*";
-                    }
                     guna2Panel5.Visible = true;
-                    soruPuani = 500;
-                    toplamPuanLbl.Text = toplamp.ToString() + "  /  " + soruPuani.ToString();
+                    soruPuani = kelime.Length * 100;
+                    soruPuanLbl.Text = soruPuani.ToString();
+                   
                 }
                 if (soru == 5)
                 {
                     kelime = kelimeler[4];
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true;
-                    soruPuani = 600;
-                    toplamPuanLbl.Text = toplamp.ToString() + "  /  " + soruPuani.ToString();
+                    soruPuani = kelime.Length * 100;
+                    soruPuanLbl.Text = soruPuani.ToString();
+                  
                 }
                 if (soru == 6)
                 {
                     kelime = kelimeler[5];
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true;
-                    soruPuani = 600;
-                    toplamPuanLbl.Text = toplamp.ToString() + "  /  " + soruPuani.ToString();
+                    soruPuani = kelime.Length * 100;
+                    soruPuanLbl.Text = soruPuani.ToString();
+                   
                 }
                 if (soru == 7)
                 {
                     kelime = kelimeler[6];
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true; guna2Panel7.Visible = true;
-                    soruPuani = 700;
-                    toplamPuanLbl.Text = toplamp.ToString() + "  /  " + soruPuani.ToString();
+                    soruPuani = kelime.Length * 100;
+                    soruPuanLbl.Text = soruPuani.ToString();
+                   
                 }
                 if (soru == 8)
                 {
-                    kelime = kelimeler[7];
+                    kelime = kelimeler[7];        
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true; guna2Panel7.Visible = true;
-                    soruPuani = 700;
-                    toplamPuanLbl.Text = toplamp.ToString() + "  /  " + soruPuani.ToString();
+                    soruPuani = kelime.Length * 100;
+                    soruPuanLbl.Text = soruPuani.ToString();
+               
                 }
                 if (soru == 9)
                 {
                     kelime = kelimeler[8];
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true; guna2Panel7.Visible = true; guna2Panel8.Visible = true;
-                    soruPuani = 800;
-                    toplamPuanLbl.Text = toplamp.ToString() + "  /  " + soruPuani.ToString();
+                    soruPuani = kelime.Length * 100;
+                    soruPuanLbl.Text = soruPuani.ToString();
+                   
                 }
                 if (soru == 10)
                 {
                     kelime = kelimeler[9];
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true; guna2Panel7.Visible = true; guna2Panel8.Visible = true;
-                    soruPuani = 800;
-                    toplamPuanLbl.Text = toplamp.ToString() + "  /  " + soruPuani.ToString();
+                    soruPuani = kelime.Length * 100;
+                    soruPuanLbl.Text = soruPuani.ToString();
+                   
                 }
                 if (soru == 11)
                 {
                     kelime = kelimeler[10];
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true; guna2Panel7.Visible = true; guna2Panel8.Visible = true; guna2Panel9.Visible = true;
-                    soruPuani = 900;
-                    toplamPuanLbl.Text = toplamp.ToString() + "  /  " + soruPuani.ToString();
+                    soruPuani = kelime.Length * 100;
+                    soruPuanLbl.Text = soruPuani.ToString();
+                 
                 }
                 if (soru == 12)
                 {
                     kelime = kelimeler[11];
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true; guna2Panel7.Visible = true; guna2Panel8.Visible = true; guna2Panel9.Visible = true;
-                    soruPuani = 900;
-                    toplamPuanLbl.Text = toplamp.ToString() + "  /  " + soruPuani.ToString();
+                    soruPuani = kelime.Length * 100;
+                    soruPuanLbl.Text = soruPuani.ToString();
+                 
                 }
                 if (soru == 13)
                 {
                     kelime = kelimeler[12];
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true; guna2Panel7.Visible = true; guna2Panel8.Visible = true; guna2Panel9.Visible = true; guna2Panel10.Visible = true;
-                    soruPuani = 1000;
-                    toplamPuanLbl.Text = toplamp.ToString() + "  /  " + soruPuani.ToString();
+                    soruPuani = kelime.Length * 100;
+                    soruPuanLbl.Text = soruPuani.ToString();
                 }
                 if (soru == 14)
                 {
                     kelime = kelimeler[13];
                     guna2Panel5.Visible = true; guna2Panel6.Visible = true; guna2Panel7.Visible = true; guna2Panel8.Visible = true; guna2Panel9.Visible = true; guna2Panel10.Visible = true;
-                    soruPuani = 1000;
-                    toplamPuanLbl.Text = toplamp.ToString() + "  /  " + soruPuani.ToString();
+                    soruPuani = kelime.Length * 100;
+                    soruPuanLbl.Text = soruPuani.ToString();
 
                 }
                 soru++;
-                if(soru<15)
+                kalanSure = 20;
+                cevapBtn.Enabled = true;
+                harfAlBtn.Enabled = true;
+                sonrakiBtn.Enabled = false;
+                k = 0; // rasgele harflerin döngüsü için değişen değişken
+                harfler = new char[kelime.Length];
+                rasgeleSayilar = new int[harfler.Length];
+                for (int i = 0; i < rasgeleSayilar.Length; i++) // içine -1 atıyorum 0 olunca döngü sonsuz döngüye giriyor.
                 {
-                    baslaBtn.Text = "Sonraki Soru";
+                    rasgeleSayilar[i] = -1;
                 }
-                else
-                {
-                    baslaBtn.Text = "Başla";
-                    baslaBtn.Enabled = false;
-                }
+                baslaBtn.Visible = false;
                 harf1Lbl.Text = "";
                 harf2Lbl.Text = "";
                 harf3Lbl.Text = "";
@@ -245,326 +216,625 @@ namespace KelimeOyunu
                 harf8Lbl.Text = "";
                 harf9Lbl.Text = "";
                 harf10Lbl.Text = "";
-                cevapBtn.Enabled = true;
-                harfAlBtn.Enabled = true;
-
             }
             catch (Exception)
             {
                 ;
             }
-
         }
-        private void harfAlBtn_Click(object sender, EventArgs e)
+        public void kisiEkle() 
         {
-            char[] harfler = kelime.ToCharArray(); // referans http://forum.csharpnedir.com/forum_posts.asp?TID=45545&title=c-stringharf-blmek-ve-diziye-aktarmak-yardm
-            byte rasgeleHarf = Convert.ToByte(r.Next(0, harfler.Length));
-            while (Array.IndexOf(rasgeleSayilar, rasgeleHarf) != -1) // rasgele sayılardan aynısı oluşmasın
+            try
             {
-                rasgeleHarf = Convert.ToByte(r.Next(0, harfler.Length));
+                // referans https://www.c-sharpcorner.com/UploadFile/9582c9/insert-update-delete-display-data-in-mysql-using-C-Sharp/
+
+                baglanti();
+                DateTime tarih = DateTime.Now.Date;
+                string format = "yyyy-MM-dd"; //referans http://furkanalniak.com/c-veri-tabanina-uygun-datetime-formati/
+                var zamanim = tarih.ToString(format);
+                string eklemekomut = "insert into tbl_oyuncular(İsim,Puan,KalanSure,Tarih) values ('" + UCHome.isim + "','" + toplamp.ToString()+ "','" + sure + "','" + zamanim+ "')";
+                komut = new MySqlCommand(eklemekomut, bag);
+                dr = komut.ExecuteReader();
+                while (dr.Read())
+                {
+                }
+                bag.Close();
+
             }
-            rasgeleSayilar[harf] = rasgeleHarf;
-            char alinanHarf = harfler[rasgeleHarf];
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void bastanBaslat()
+        {
+            guna2Panel5.Visible = false;
+            guna2Panel6.Visible = false;
+            guna2Panel7.Visible = false;
+            guna2Panel8.Visible = false;
+            guna2Panel9.Visible = false;
+            guna2Panel10.Visible = false;
+            timePanel1.Visible = false;
+            toplamPuan.Text = "Toplam Puan:" + toplamp;
+            timer2Lbl.Text = "04:00";
+            timer1Lbl.Text = "0:20";
+            sorusayisi = 0;
+            soru = 1;
+            timer1.Enabled = false;
+            timer1.Interval = 1000;
+            sonrakiBtn.Visible = false;
+            cevapTxt.Enabled = false;
+            harfAlBtn.Enabled = false;
+            Array.Clear(sorular, 0, sorular.Length);
+            Array.Clear(kelimeler, 0, kelimeler.Length);
+            Array.Clear(rasgeleSayilar, 0, rasgeleSayilar.Length);
+        }
+        public void txtaydet()
+        {
+            string file = "C:/Users/İrem Akalp/Source/Repos/KelimeOyunu/bin/Debug/Belgeler/oyuncular.txt";
+            string writeText ="İsim: "+ UCHome.isim + "  Puan: " + toplamp + " Kalan Süre: " + sure + "  Oynandığı Tarih: " + DateTime.Now.ToString();
+
+            FileStream fs = new FileStream(file, FileMode.OpenOrCreate, FileAccess.Write);
+            fs.Close();
+            File.AppendAllText(file, Environment.NewLine + writeText);
+        }
+        private void UCPlay_Load(object sender, EventArgs e)
+        {
+            guna2Panel5.Visible = false;
+            guna2Panel6.Visible = false;
+            guna2Panel7.Visible = false;
+            guna2Panel8.Visible = false;
+            guna2Panel9.Visible = false;
+            guna2Panel10.Visible = false;
+            timePanel1.Visible = false;
+            toplamp = 0;
+            toplamPuan.Text = "Toplam Puan:" + toplamp;      
+            timer2Lbl.Text = "04:00";
+            timer1Lbl.Text = "0:20";
+            sorusayisi = 0;
+            soru = 1;
+            timer1.Enabled = false;
+            timer1.Interval = 1000;
+            sonrakiBtn.Visible = false;
+            cevapTxt.Enabled = false;
+            harfAlBtn.Enabled = false;
+            cevapBtn.Enabled = false;
+            timer2.Enabled = false;
+            timer2.Interval = 1000;
+        }   
+        public void rasgeleHarf(int rasgeleHarf, char alinanHarf)
+        {
+            soruPuani -= 100;
+            soruPuanLbl.Text = soruPuani.ToString();
             if (rasgeleHarf == 0)
             {
-                harf1Lbl.Text = harf1Lbl.Text.Insert(Convert.ToInt32(rasgeleHarf), alinanHarf.ToString());
+                harf1Lbl.Text = alinanHarf.ToString();
             }
             if (rasgeleHarf == 1)
             {
-                harf2Lbl.Text = harf2Lbl.Text.Insert(Convert.ToInt32(rasgeleHarf), alinanHarf.ToString());
+                harf2Lbl.Text = alinanHarf.ToString();
             }
             if (rasgeleHarf == 2)
             {
-                harf3Lbl.Text = harf3Lbl.Text.Insert(Convert.ToInt32(rasgeleHarf), alinanHarf.ToString());
+                harf3Lbl.Text = alinanHarf.ToString();
             }
             if (rasgeleHarf == 3)
             {
-                harf4Lbl.Text = harf4Lbl.Text.Insert(Convert.ToInt32(rasgeleHarf), alinanHarf.ToString());
+                harf4Lbl.Text = alinanHarf.ToString();
             }
             if (rasgeleHarf == 4)
             {
-                harf5Lbl.Text = harf5Lbl.Text.Insert(Convert.ToInt32(rasgeleHarf), alinanHarf.ToString());
+                harf5Lbl.Text = alinanHarf.ToString();
             }
             if (rasgeleHarf == 5)
             {
-                harf6Lbl.Text = harf6Lbl.Text.Insert(Convert.ToInt32(rasgeleHarf), alinanHarf.ToString());
+                harf6Lbl.Text = alinanHarf.ToString();
             }
             if (rasgeleHarf == 6)
             {
-                harf7Lbl.Text = harf7Lbl.Text.Insert(Convert.ToInt32(rasgeleHarf), alinanHarf.ToString());
+                harf7Lbl.Text = alinanHarf.ToString();
             }
             if (rasgeleHarf == 7)
             {
-                harf8Lbl.Text = harf8Lbl.Text.Insert(Convert.ToInt32(rasgeleHarf), alinanHarf.ToString());
+                harf8Lbl.Text = alinanHarf.ToString();
             }
             if (rasgeleHarf == 8)
             {
-                harf9Lbl.Text = harf9Lbl.Text.Insert(Convert.ToInt32(rasgeleHarf), alinanHarf.ToString());
+                harf9Lbl.Text = alinanHarf.ToString();
             }
             if (rasgeleHarf == 9)
             {
-                harf10Lbl.Text = harf10Lbl.Text.Insert(Convert.ToInt32(rasgeleHarf), alinanHarf.ToString());
+                harf10Lbl.Text = alinanHarf.ToString();
             }
+        }
+        private void sonrakiBtn_Click_1(object sender, EventArgs e)
+        {
+            string tahmin = cevapTxt.Text;
+            if (tahmin.ToLower() == kelime.ToLower())
+            {
+                if (soru >= 15)
+                {
+                    toplamp += soruPuani;
+                    toplamPuanLbl.Text = "Toplam Puan " + " " + toplamp.ToString();
+                    MessageBox.Show("Oyun bitti." + "\n" + "İsim: " + UCHome.isim + "\n" + "Toplam Puanınız: " + toplamp + "\n" + "Kalan Süre: " + sure + "\n" + "Tarih:" + DateTime.Now.ToString());
+                    kisiEkle();
+                    txtaydet();
+                    UCHome uCHome = new UCHome();
+                    addUserControl(uCHome);
+                    baslaBtn.Visible = true;
+                    return;
+                }
+                toplamp += soruPuani;
+                toplamPuanLbl.Text = "Toplam Puan " + " " + toplamp.ToString();
+                yeniSoru();
+                cevapTxt.Text = "";
+                cevapTxt.Enabled = false;
+                timer2.Enabled = false;
+                timePanel1.Visible = false;
+                harfAlBtn.Enabled = true;
+                sonrakiBtn.Enabled = false;
+                cevapBtn.Enabled = true;
+                kalanSure = 20;
+            }
+            else
+            {
+                //yanlis bilirse calisacak kisim
+                MessageBox.Show(" Yanlış bildiniz! Cevap: " + kelime + " " + " Kazanılan Puan : 0");
+                cevapTxt.Text = "";
+                basla = true;
+                if (soru >= 15) // yanlış bilerek biter ise
+                {
+                    MessageBox.Show("Oyun bitti." + UCHome.isim + "\n" + "Toplam Puanınız : " + toplamp.ToString() + "\n" + " Kalan Süre:" + sure + "\n" + "Tarih:" + DateTime.Now.ToString());
+                    kisiEkle();
+                    txtaydet();
+                    UCHome uCHome = new UCHome();
+                    addUserControl(uCHome);
+                    baslaBtn.Visible = true;
+                    return;
+                }
+                toplamPuanLbl.Text = "Toplam Puan " + " " + toplamp.ToString();
+                yeniSoru();
+                cevapTxt.Text = "";
+                cevapTxt.Enabled = false;
+                timer2.Enabled = false;
+                timePanel1.Visible = false;
+                harfAlBtn.Enabled = true;
+                sonrakiBtn.Enabled = false;
+                cevapBtn.Enabled = true;
+                kalanSure = 20;
+                timer1.Enabled = true;
+            }
+        }
+        private void baslaBtn_Click_1(object sender, EventArgs e)
+        {
+            soruSec();
+            sansayac = 0; dksayac = 0;
+            basla = true;
+            timer1.Enabled = true;
+            yeniSoru();
+            timer2.Enabled = false;
+            Home.guna2Panel1.Enabled = false;
 
         }
-        private void cevapBtn_Click(object sender, EventArgs e)
+        private void harfAlBtn_Click_1(object sender, EventArgs e)
         {
-            switch (sorusayisi)
+            switch (soru)
             {
                 case 1:
                     {
-                        if (cevapTxt.Text.ToLower() == kelimeler[0])
+                        harfler = kelime.ToCharArray();
+                        int rastegele = r.Next(0, harfler.Length);
+                        while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
-                            toplamp += soruPuani;
+                            rastegele = r.Next(0, harfler.Length);
+
                         }
-                            
+                        rasgeleSayilar[k] = rastegele;
+                        char alinanHarf = harfler[rastegele];
+                        rasgeleHarf(rastegele, alinanHarf);
+
+                        if (k < harfler.Length - 1)
+                        {
+                            k++;
+                        }
                         else
                         {
-                            toplamp -= soruPuani;
+                            //Bütün harfler alındı yeni soruya geçir
+                            MessageBox.Show("Bütün harfler alındı. Diğer soruya geçiliyor. Kazanılan Puan : 0");
+                            yeniSoru();
+                            return;
                         }
-                           
-                        toplamPuanLbl.Text = toplamp.ToString() + "  /  " + "0";
-                        harf1Lbl.Text = kelime[0].ToString(); harf2Lbl.Text = kelime[1].ToString();
-                        harf3Lbl.Text = kelime[2].ToString(); harf4Lbl.Text = kelime[3].ToString();
                         break;
                     }
                 case 2:
                     {
-                        if (cevapTxt.Text.ToLower() == kelimeler[1])
+                        harfler = kelime.ToCharArray();
+                        int rastegele = r.Next(0, harfler.Length);
+                        while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
-                            toplamp += soruPuani;
-                        }
+                            rastegele = r.Next(0, harfler.Length);
 
+                        }
+                        rasgeleSayilar[k] = rastegele;
+                        char alinanHarf = harfler[rastegele];
+                        rasgeleHarf(rastegele, alinanHarf);
+                        if (k < harfler.Length - 1)
+                        {
+                            k++;
+                        }
                         else
                         {
-                            toplamp -= soruPuani;
+                            //Bütün harfler alındı yeni soruya geçir
+                            MessageBox.Show("Bütün harfler alındı. Diğer soruya geçiliyor. Kazanılan Puan : 0");
+                            yeniSoru();
+                            return;
                         }
-                        toplamPuanLbl.Text = toplamp.ToString() + "  /  " + "0";
-                        harf1Lbl.Text = kelime[0].ToString(); harf2Lbl.Text = kelime[1].ToString();
-                        harf3Lbl.Text = kelime[2].ToString(); harf4Lbl.Text = kelime[3].ToString();
                         break;
                     }
                 case 3:
                     {
-                        if (cevapTxt.Text.ToLower() == kelimeler[2])
+                        harfler = kelime.ToCharArray();
+                        int rastegele = r.Next(0, harfler.Length);
+                        while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
-                            toplamp += soruPuani;
-                        }
+                            rastegele = r.Next(0, harfler.Length);
 
+                        }
+                        rasgeleSayilar[k] = rastegele;
+                        char alinanHarf = harfler[rastegele];
+                        rasgeleHarf(rastegele, alinanHarf);
+                        if (k < harfler.Length - 1)
+                        {
+                            k++;
+                        }
                         else
                         {
-                            toplamp -= soruPuani;
+                            //Bütün harfler alındı yeni soruya geçir
+                            MessageBox.Show("Bütün harfler alındı. Diğer soruya geçiliyor. Kazanılan Puan : 0");
+                            yeniSoru();
+                            return;
                         }
-                        toplamPuanLbl.Text = toplamp.ToString() + "  /  " + "0";
-                        harf1Lbl.Text = kelime[0].ToString(); harf2Lbl.Text = kelime[1].ToString();
-                        harf3Lbl.Text = kelime[2].ToString(); harf4Lbl.Text = kelime[3].ToString();
-                        harf5Lbl.Text = kelime[4].ToString();
                         break;
                     }
                 case 4:
                     {
-                        if (cevapTxt.Text.ToLower() == kelimeler[3])
+                        harfler = kelime.ToCharArray();
+                        int rastegele = r.Next(0, harfler.Length);
+                        while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
-                            toplamp += soruPuani;
-                        }
+                            rastegele = r.Next(0, harfler.Length);
 
+                        }
+                        rasgeleSayilar[k] = rastegele;
+                        char alinanHarf = harfler[rastegele];
+                        rasgeleHarf(rastegele, alinanHarf);
+                        if (k < harfler.Length - 1)
+                        {
+                            k++;
+                        }
                         else
                         {
-                            toplamp -= soruPuani;
+                            //Bütün harfler alındı yeni soruya geçir
+                            MessageBox.Show("Bütün harfler alındı. Diğer soruya geçiliyor. Kazanılan Puan : 0");
+                            yeniSoru();
+                            return;
                         }
-                        toplamPuanLbl.Text = toplamp.ToString() + "  /  " + "0";
-                        harf1Lbl.Text = kelime[0].ToString(); harf2Lbl.Text = kelime[1].ToString();
-                        harf3Lbl.Text = kelime[2].ToString(); harf4Lbl.Text = kelime[3].ToString();
-                        harf5Lbl.Text = kelime[4].ToString();
                         break;
                     }
                 case 5:
                     {
-                        if (cevapTxt.Text.ToLower() == kelimeler[4])
+                        harfler = kelime.ToCharArray();
+                        int rastegele = r.Next(0, harfler.Length);
+                        while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
-                            toplamp += soruPuani;
-                        }
+                            rastegele = r.Next(0, harfler.Length);
 
+                        }
+                        rasgeleSayilar[k] = rastegele;
+                        char alinanHarf = harfler[rastegele];
+                        rasgeleHarf(rastegele, alinanHarf);
+                        if (k < harfler.Length - 1)
+                        {
+                            k++;
+                        }
                         else
                         {
-                            toplamp -= soruPuani;
+                            //Bütün harfler alındı yeni soruya geçir
+                            MessageBox.Show("Bütün harfler alındı. Diğer soruya geçiliyor. Kazanılan Puan : 0");
+                            yeniSoru();
+                            return;
                         }
-                        toplamPuanLbl.Text = toplamp.ToString() + "  /  " + "0";
-                        harf1Lbl.Text = kelime[0].ToString(); harf2Lbl.Text = kelime[1].ToString();
-                        harf3Lbl.Text = kelime[2].ToString(); harf4Lbl.Text = kelime[3].ToString();
-                        harf5Lbl.Text = kelime[4].ToString(); harf6Lbl.Text = kelime[5].ToString();
                         break;
                     }
                 case 6:
                     {
-                        if (cevapTxt.Text.ToLower() == kelimeler[5])
+                        harfler = kelime.ToCharArray();
+                        int rastegele = r.Next(0, harfler.Length);
+                        while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
-                            toplamp += soruPuani;
-                        }
+                            rastegele = r.Next(0, harfler.Length);
 
+                        }
+                        rasgeleSayilar[k] = rastegele;
+                        char alinanHarf = harfler[rastegele];
+                        rasgeleHarf(rastegele, alinanHarf);
+                        if (k < harfler.Length - 1)
+                        {
+                            k++;
+                        }
                         else
                         {
-                            toplamp -= soruPuani;
+                            //Bütün harfler alındı yeni soruya geçir
+                            MessageBox.Show("Bütün harfler alındı. Diğer soruya geçiliyor. Kazanılan Puan : 0");
+                            yeniSoru();
+                            return;
                         }
-                        toplamPuanLbl.Text = toplamp.ToString() + "  /  " + "0";
-                        harf1Lbl.Text = kelime[0].ToString(); harf2Lbl.Text = kelime[1].ToString();
-                        harf3Lbl.Text = kelime[2].ToString(); harf4Lbl.Text = kelime[3].ToString();
-                        harf5Lbl.Text = kelime[4].ToString(); harf6Lbl.Text = kelime[5].ToString();
                         break;
                     }
                 case 7:
                     {
-                        if (cevapTxt.Text.ToLower() == kelimeler[6])
+                        harfler = kelime.ToCharArray();
+                        int rastegele = r.Next(0, harfler.Length);
+                        while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
-                            toplamp += soruPuani;
-                        }
+                            rastegele = r.Next(0, harfler.Length);
 
+                        }
+                        rasgeleSayilar[k] = rastegele;
+                        char alinanHarf = harfler[rastegele];
+                        rasgeleHarf(rastegele, alinanHarf);
+                        if (k < harfler.Length - 1)
+                        {
+                            k++;
+                        }
                         else
                         {
-                            toplamp -= soruPuani;
+                            //Bütün harfler alındı yeni soruya geçir
+                            MessageBox.Show("Bütün harfler alındı. Diğer soruya geçiliyor. Kazanılan Puan : 0");
+                            yeniSoru();
+                            return;
                         }
-                        toplamPuanLbl.Text = toplamp.ToString() + "  /  " + "0";
-                        harf1Lbl.Text = kelime[0].ToString(); harf2Lbl.Text = kelime[1].ToString();
-                        harf3Lbl.Text = kelime[2].ToString(); harf4Lbl.Text = kelime[3].ToString();
-                        harf5Lbl.Text = kelime[4].ToString(); harf6Lbl.Text = kelime[5].ToString();
-                        harf7Lbl.Text = kelime[6].ToString();
                         break;
                     }
                 case 8:
                     {
-                        if (cevapTxt.Text.ToLower() == kelimeler[7])
+                        harfler = kelime.ToCharArray();
+                        int rastegele = r.Next(0, harfler.Length);
+                        while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
-                            toplamp += soruPuani;
-                        }
+                            rastegele = r.Next(0, harfler.Length);
 
+                        }
+                        rasgeleSayilar[k] = rastegele;
+                        char alinanHarf = harfler[rastegele];
+                        rasgeleHarf(rastegele, alinanHarf);
+                        if (k < harfler.Length - 1)
+                        {
+                            k++;
+                        }
                         else
                         {
-                            toplamp -= soruPuani;
+                            //Bütün harfler alındı yeni soruya geçir
+                            MessageBox.Show("Bütün harfler alındı. Diğer soruya geçiliyor. Kazanılan Puan : 0");
+                            yeniSoru();
+                            return;
                         }
-                        toplamPuanLbl.Text = toplamp.ToString() + "  /  " + "0";
-                        harf1Lbl.Text = kelime[0].ToString(); harf2Lbl.Text = kelime[1].ToString();
-                        harf3Lbl.Text = kelime[2].ToString(); harf4Lbl.Text = kelime[3].ToString();
-                        harf5Lbl.Text = kelime[4].ToString(); harf6Lbl.Text = kelime[5].ToString();
-                        harf7Lbl.Text = kelime[6].ToString();
                         break;
                     }
                 case 9:
                     {
-                        if (cevapTxt.Text.ToLower() == kelimeler[8])
+                        harfler = kelime.ToCharArray();
+                        int rastegele = r.Next(0, harfler.Length);
+                        while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
-                            toplamp += soruPuani;
-                        }
+                            rastegele = r.Next(0, harfler.Length);
 
+                        }
+                        rasgeleSayilar[k] = rastegele;
+                        char alinanHarf = harfler[rastegele];
+                        rasgeleHarf(rastegele, alinanHarf);
+                        if (k < harfler.Length - 1)
+                        {
+                            k++;
+                        }
                         else
                         {
-                            toplamp -= soruPuani;
+                            //Bütün harfler alındı yeni soruya geçir
+                            MessageBox.Show("Bütün harfler alındı. Diğer soruya geçiliyor. Kazanılan Puan : 0");
+                            yeniSoru();
+                            return;
                         }
-                        toplamPuanLbl.Text = toplamp.ToString() + "  /  " + "0";
-                        harf1Lbl.Text = kelime[0].ToString(); harf2Lbl.Text = kelime[1].ToString();
-                        harf3Lbl.Text = kelime[2].ToString(); harf4Lbl.Text = kelime[3].ToString();
-                        harf5Lbl.Text = kelime[4].ToString(); harf6Lbl.Text = kelime[5].ToString();
-                        harf7Lbl.Text = kelime[6].ToString(); harf8Lbl.Text = kelime[7].ToString();
                         break;
                     }
                 case 10:
                     {
-                        if (cevapTxt.Text.ToLower() == kelimeler[9])
+                        harfler = kelime.ToCharArray();
+                        int rastegele = r.Next(0, harfler.Length);
+                        while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
-                            toplamp += soruPuani;
-                        }
+                            rastegele = r.Next(0, harfler.Length);
 
+                        }
+                        rasgeleSayilar[k] = rastegele;
+                        char alinanHarf = harfler[rastegele];
+                        rasgeleHarf(rastegele, alinanHarf);
+                        if (k < harfler.Length - 1)
+                        {
+                            k++;
+                        }
                         else
                         {
-                            toplamp -= soruPuani;
+                            //Bütün harfler alındı yeni soruya geçir
+                            MessageBox.Show("Bütün harfler alındı. Diğer soruya geçiliyor. Kazanılan Puan : 0");
+                            yeniSoru();
+                            return;
                         }
-                        toplamPuanLbl.Text = toplamp.ToString() + "  /  " + "0";
-                        harf1Lbl.Text = kelime[0].ToString(); harf2Lbl.Text = kelime[1].ToString();
-                        harf3Lbl.Text = kelime[2].ToString(); harf4Lbl.Text = kelime[3].ToString();
-                        harf5Lbl.Text = kelime[4].ToString(); harf6Lbl.Text = kelime[5].ToString();
-                        harf7Lbl.Text = kelime[6].ToString(); harf8Lbl.Text = kelime[7].ToString();
                         break;
                     }
                 case 11:
                     {
-                        if (cevapTxt.Text.ToLower() == kelimeler[10])
+                        harfler = kelime.ToCharArray();
+                        int rastegele = r.Next(0, harfler.Length);
+                        while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
-                            toplamp += soruPuani;
-                        }
+                            rastegele = r.Next(0, harfler.Length);
 
+                        }
+                        rasgeleSayilar[k] = rastegele;
+                        char alinanHarf = harfler[rastegele];
+                        rasgeleHarf(rastegele, alinanHarf);
+                        if (k < harfler.Length - 1)
+                        {
+                            k++;
+                        }
                         else
                         {
-                            toplamp -= soruPuani;
+                            //Bütün harfler alındı yeni soruya geçir
+                            MessageBox.Show("Bütün harfler alındı. Diğer soruya geçiliyor. Kazanılan Puan : 0");
+                            yeniSoru();
+                            return;
                         }
-                        toplamPuanLbl.Text = toplamp.ToString() + "  /  " + "0";
-                        harf1Lbl.Text = kelime[0].ToString(); harf2Lbl.Text = kelime[1].ToString();
-                        harf3Lbl.Text = kelime[2].ToString(); harf4Lbl.Text = kelime[3].ToString();
-                        harf5Lbl.Text = kelime[4].ToString(); harf6Lbl.Text = kelime[5].ToString();
-                        harf7Lbl.Text = kelime[6].ToString(); harf8Lbl.Text = kelime[7].ToString();
-                        harf9Lbl.Text = kelime[8].ToString();
                         break;
                     }
                 case 12:
                     {
-                        if (cevapTxt.Text.ToLower() == kelimeler[11])
+                        harfler = kelime.ToCharArray();
+                        int rastegele = r.Next(0, harfler.Length);
+                        while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
-                            toplamp += soruPuani;
-                        }
+                            rastegele = r.Next(0, harfler.Length);
 
+                        }
+                        rasgeleSayilar[k] = rastegele;
+                        char alinanHarf = harfler[rastegele];
+                        rasgeleHarf(rastegele, alinanHarf);
+                        if (k < harfler.Length - 1)
+                        {
+                            k++;
+                        }
                         else
                         {
-                            toplamp -= soruPuani;
+                            //Bütün harfler alındı yeni soruya geçir
+                            MessageBox.Show("Bütün harfler alındı. Diğer soruya geçiliyor. Kazanılan Puan : 0");
+                            yeniSoru();
+                            return;
                         }
-                        toplamPuanLbl.Text = toplamp.ToString() + "  /  " + "0";
-                        harf1Lbl.Text = kelime[0].ToString(); harf2Lbl.Text = kelime[1].ToString();
-                        harf3Lbl.Text = kelime[2].ToString(); harf4Lbl.Text = kelime[3].ToString();
-                        harf5Lbl.Text = kelime[4].ToString(); harf6Lbl.Text = kelime[5].ToString();
-                        harf7Lbl.Text = kelime[6].ToString(); harf8Lbl.Text = kelime[7].ToString();
-                        harf9Lbl.Text = kelime[8].ToString();
                         break;
                     }
                 case 13:
                     {
-                        if (cevapTxt.Text.ToLower() == kelimeler[12])
+                        harfler = kelime.ToCharArray();
+                        int rastegele = r.Next(0, harfler.Length);
+                        while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
-                            toplamp += soruPuani;
-                        }
+                            rastegele = r.Next(0, harfler.Length);
 
+                        }
+                        rasgeleSayilar[k] = rastegele;
+                        char alinanHarf = harfler[rastegele];
+                        rasgeleHarf(rastegele, alinanHarf);
+                        if (k < harfler.Length - 1)
+                        {
+                            k++;
+                        }
                         else
                         {
-                            toplamp -= soruPuani;
+                            //Bütün harfler alındı yeni soruya geçir
+                            MessageBox.Show("Bütün harfler alındı. Diğer soruya geçiliyor. Kazanılan Puan : 0");
+                            yeniSoru();
+                            return;
                         }
-                        toplamPuanLbl.Text = toplamp.ToString() + "  /  " + "0";
-                        harf1Lbl.Text = kelime[0].ToString(); harf2Lbl.Text = kelime[1].ToString();
-                        harf3Lbl.Text = kelime[2].ToString(); harf4Lbl.Text = kelime[3].ToString();
-                        harf5Lbl.Text = kelime[4].ToString(); harf6Lbl.Text = kelime[5].ToString();
-                        harf7Lbl.Text = kelime[6].ToString(); harf8Lbl.Text = kelime[7].ToString();
-                        harf9Lbl.Text = kelime[8].ToString(); harf10Lbl.Text = kelime[9].ToString();
                         break;
                     }
                 case 14:
                     {
-                        if (cevapTxt.Text.ToLower() == kelimeler[13])
+                        harfler = kelime.ToCharArray();
+                        int rastegele = r.Next(0, harfler.Length);
+                        while (Array.IndexOf(rasgeleSayilar, rastegele) != -1)
                         {
-                            toplamp += soruPuani;
-                        }
+                            rastegele = r.Next(0, harfler.Length);
 
+                        }
+                        rasgeleSayilar[k] = rastegele;
+                        char alinanHarf = harfler[rastegele];
+                        rasgeleHarf(rastegele, alinanHarf);
+                        if (k < harfler.Length - 1)
+                        {
+                            k++;
+                        }
                         else
                         {
-                            toplamp -= soruPuani;
+                            //Bütün harfler alındı yeni soruya geçir
+                            MessageBox.Show("Bütün harfler alındı. Diğer soruya geçiliyor. Kazanılan Puan : 0");
+                            yeniSoru();
+                            return;
                         }
-                        toplamPuanLbl.Text = toplamp.ToString() + "  /  " + "0";
-                        harf1Lbl.Text = kelime[0].ToString(); harf2Lbl.Text = kelime[1].ToString();
-                        harf3Lbl.Text = kelime[2].ToString(); harf4Lbl.Text = kelime[3].ToString();
-                        harf5Lbl.Text = kelime[4].ToString(); harf6Lbl.Text = kelime[5].ToString();
-                        harf7Lbl.Text = kelime[6].ToString(); harf8Lbl.Text = kelime[7].ToString();
-                        harf9Lbl.Text = kelime[8].ToString(); harf10Lbl.Text = kelime[9].ToString();
                         timer1.Enabled = false;
                         break;
                     }
-
-
             }
         }
-       
+        private void cevapBtn_Click_1(object sender, EventArgs e)
+        {
+            timePanel1.Visible = true;
+            timer1.Enabled = false;
+            basla = true;
+            sonrakiBtn.Visible = true;
+            timer2.Enabled = true;
+            cevapTxt.Enabled = true;
+            harfAlBtn.Enabled = false;
+            sonrakiBtn.Enabled = true;
+            cevapBtn.Enabled = false;
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            sansayac++;
+            if (sansayac > 50)
+            {
+                timer2Lbl.Text = "0" + (3 - dksayac).ToString() + " : 0" + (60 - sansayac).ToString();
+
+            }
+            else
+            {
+                timer2Lbl.Text = "0" + (3 - dksayac).ToString() + " : " + (60 - sansayac).ToString();
+            }
+            sure = timer2Lbl.Text;
+
+            if (sansayac == 60)
+            {
+                dksayac++;
+                sansayac = 0;
+            }
+            if (dksayac == 4)
+            {
+                baslaBtn.Enabled = false;
+                cevapBtn.Enabled = false;
+                harfAlBtn.Enabled = false;
+                timer1.Enabled = false;
+                MessageBox.Show("Süreniz bitmiştir." + "\n" + "İsim: " + UCHome.isim + "\n" + "Toplam Puanınız: " + toplamp + "\n" + "Tarih:" + DateTime.Now.ToString() + "\n" + "Giriş sayfasına yönlendiriliyorsunuz.");
+                kisiEkle();
+                txtaydet();
+                UCHome ucHome = new UCHome();
+                addUserControl(ucHome);
+            }
+        }
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (kalanSure == 0)
+            {
+                timer2.Enabled = false;
+                MessageBox.Show("Süreniz dolmuştur. Kazanılan puan : 0");
+                timePanel1.Visible = false;
+                cevapTxt.Enabled = false;
+                sonrakiBtn.Enabled = false;
+                timer1.Enabled = false;
+                yeniSoru();
+            }
+            else
+            {
+                kalanSure -= 1;
+                timer1Lbl.Text = kalanSure.ToString();
+            }
+        }
     }
 }

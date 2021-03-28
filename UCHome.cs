@@ -12,6 +12,7 @@ namespace KelimeOyunu
 {
     public partial class UCHome : UserControl
     {
+        public static string isim;
         public UCHome()
         {
             InitializeComponent();
@@ -42,6 +43,7 @@ namespace KelimeOyunu
             {
                 Home.guna2Panel1.Enabled = false;
             }
+            isim = adTxt.Text;
             
         }
 

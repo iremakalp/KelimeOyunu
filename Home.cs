@@ -13,10 +13,6 @@ namespace KelimeOyunu
 {
     public partial class Home : Form
     {
-        MySqlConnection bag;
-        MySqlCommand komut;
-        MySqlDataReader dr;
-        public static bool durum;
         public Home()
         {
             InitializeComponent();
@@ -30,13 +26,6 @@ namespace KelimeOyunu
             uc.BringToFront();
             ucHomePanel.Controls.Add(uc);
         }
-
-        public void baglanti()
-        {
-            bag = new MySqlConnection("Server=127.0.0.1;Database=kelimeoyunu;user=root;Pwd=1562;SslMode=none");
-            bag.Open();
-        }
-        
         private void Form1_Load(object sender, EventArgs e)
         {
             // referans https://kodzilla.wordpress.com/2012/04/23/c-fare-uzerine-aciklama-yazma-tooltip-kullanimi/ 
@@ -45,6 +34,8 @@ namespace KelimeOyunu
             Aciklama.SetToolTip(rulesBtn, "Oyun Kuralları");
             Aciklama.SetToolTip(bestBtn, "Oyun Skorları");
             Aciklama.SetToolTip(addBtn, "Soru Ekle");
+            UCHome uC_ = new UCHome();
+            addUserControl(uC_);
         }
         private void rulesBtn_Click(object sender, EventArgs e)
         {
@@ -56,8 +47,6 @@ namespace KelimeOyunu
         {
             UCHome uC_ = new UCHome();
             addUserControl(uC_);
-            durum = true;
-          
         }
 
         private void bestBtn_Click(object sender, EventArgs e)
