@@ -36,16 +36,50 @@ namespace KelimeOyunu
             oyuncularData.DataSource = dt;
 
         }
+        // referans https://forum.turkishcode.com/konu-c-datagridview-den-txt-dosyasina-veri-aktarma.html
+        public void txtKaydet(DataGridView veriTablosu)
+        {
+            try
+            {
+                SaveFileDialog dosyakaydet = new SaveFileDialog();
+                dosyakaydet.FileName = "En İyi Oyuncular";
+                dosyakaydet.InitialDirectory = Environment.SpecialFolder.Desktop.ToString();
+                dosyakaydet.Filter = "Txt Dosyası|*.txt";
+                if (dosyakaydet.ShowDialog() == DialogResult.OK)
+                {
+                    TextWriter txt = new StreamWriter(dosyakaydet.FileName);
+                    foreach (DataGridViewColumn sutun in veriTablosu.Columns)
+                    {
+                        txt.Write(sutun.HeaderText + "    ");
+                    }
+                    txt.Write("\n");
+                    foreach (DataGridViewRow satir in veriTablosu.Rows)
+                    {
+                        foreach (DataGridViewCell hucre in satir.Cells)
+                        {
+                            txt.Write(hucre.Value.ToString() + "     ");
+                        }
+                        txt.Write("\n");
+                    }
+                    txt.Close();
+                    MessageBox.Show("TXT dosyası başarıyla oluşturuldu!\n" + "Dosya Konumu: " + dosyakaydet.FileName, "İşlem Tamam");
+                }
+            }
+            catch (Exception hata)
+            {
+                MessageBox.Show(hata.Message);
+            }
+        }
         private void UCBest_Load(object sender, EventArgs e)
         {
             oyuncuListele();
-            oyuncularData.AllowUserToAddRows = false;
+            oyuncularData.AllowUserToAddRows = false; //dosyaya kaydederken sorun cikarmamasi icin bos satiri gizledik
 
         }
 
         private void dosyayaKaydetBtn_Click(object sender, EventArgs e)
         {
-            txtAktar.txtKaydet(oyuncularData);
+            txtKaydet(oyuncularData);
         }
     }
 }
