@@ -34,8 +34,8 @@ namespace KelimeOyunu
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.oyuncularData = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.oyuncularData = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oyuncularData)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +52,17 @@ namespace KelimeOyunu
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(766, 484);
             this.guna2Panel1.TabIndex = 1;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe Script", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(158, 97);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(409, 46);
+            this.guna2HtmlLabel1.TabIndex = 10;
+            this.guna2HtmlLabel1.Text = "Oyundaki En İyi 5 Oyuncu\r\n";
             // 
             // oyuncularData
             // 
@@ -81,11 +92,11 @@ namespace KelimeOyunu
             this.oyuncularData.DefaultCellStyle = dataGridViewCellStyle3;
             this.oyuncularData.EnableHeadersVisualStyles = false;
             this.oyuncularData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.oyuncularData.Location = new System.Drawing.Point(121, 180);
+            this.oyuncularData.Location = new System.Drawing.Point(120, 167);
             this.oyuncularData.Name = "oyuncularData";
             this.oyuncularData.RowHeadersVisible = false;
             this.oyuncularData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.oyuncularData.Size = new System.Drawing.Size(482, 150);
+            this.oyuncularData.Size = new System.Drawing.Size(482, 176);
             this.oyuncularData.TabIndex = 9;
             this.oyuncularData.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.oyuncularData.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -109,17 +120,6 @@ namespace KelimeOyunu
             this.oyuncularData.ThemeStyle.RowsStyle.Height = 22;
             this.oyuncularData.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.oyuncularData.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe Script", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(178, 110);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(409, 46);
-            this.guna2HtmlLabel1.TabIndex = 10;
-            this.guna2HtmlLabel1.Text = "Oyundaki En İyi 5 Oyuncu\r\n";
             // 
             // UCBest
             // 

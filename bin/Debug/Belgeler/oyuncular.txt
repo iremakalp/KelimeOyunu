@@ -1,3 +1,6 @@
 
 İsim: İrem  Puan: 9800 Kalan Süre: 02 : 23  Oynandığı Tarih: 28.03.2021 16:49:24
 İsim: Hasan  Puan: 0 Kalan Süre: 00 : 00  Oynandığı Tarih: 28.03.2021 17:53:25
+İsim: Cansu  Puan: 7700 Kalan Süre: 02 : 30  Oynandığı Tarih: 29.03.2021 17:56:54
+İsim: Ahmet  Puan: 1300 Kalan Süre: 03 : 34  Oynandığı Tarih: 29.03.2021 18:01:55
+İsim: Cihan  Puan: 2800 Kalan Süre: 01 : 28  Oynandığı Tarih: 29.03.2021 18:08:36

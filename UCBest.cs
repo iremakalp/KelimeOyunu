@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace KelimeOyunu
         public void oyuncuListele() // gonderen kişinin tüm faturalarını listeleme
         {
             baglanti();
-            string komut = "SELECT İsim,Puan,KalanSure,Tarih FROM tbl_oyuncular ORDER BY puan DESC limit 5";
+            string komut = "SELECT İsim,Puan,KalanSure,Tarih FROM tbl_oyuncular ORDER BY Puan DESC limit 5";
             MySqlDataAdapter da = new MySqlDataAdapter(komut, bag);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -39,6 +40,8 @@ namespace KelimeOyunu
         private void UCBest_Load(object sender, EventArgs e)
         {
             oyuncuListele();
+          
         }
+       
     }
 }

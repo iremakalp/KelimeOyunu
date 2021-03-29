@@ -229,10 +229,10 @@ namespace KelimeOyunu
                 // referans https://www.c-sharpcorner.com/UploadFile/9582c9/insert-update-delete-display-data-in-mysql-using-C-Sharp/
 
                 baglanti();
-                DateTime tarih = DateTime.Now.Date;
-                string format = "yyyy-MM-dd"; //referans http://furkanalniak.com/c-veri-tabanina-uygun-datetime-formati/
-                var zamanim = tarih.ToString(format);
-                string eklemekomut = "insert into tbl_oyuncular(İsim,Puan,KalanSure,Tarih) values ('" + UCHome.isim + "','" + toplamp.ToString() + "','" + sure + "','" + zamanim + "')";
+                DateTime tarih = DateTime.Now;
+                string format = "yyyy-MM-dd HH:mm:ss"; //referans http://furkanalniak.com/c-veri-tabanina-uygun-datetime-formati/
+                var zaman = tarih.ToString(format);
+                string eklemekomut = "insert into tbl_oyuncular(İsim,Puan,KalanSure,Tarih) values ('" + UCHome.isim + "','" + toplamp.ToString() + "','" + sure + "','" + zaman + "')";
                 komut = new MySqlCommand(eklemekomut, bag);
                 dr = komut.ExecuteReader();
                 while (dr.Read())
@@ -262,7 +262,7 @@ namespace KelimeOyunu
             MySqlDataAdapter da = new MySqlDataAdapter(komut, bag);
             DataTable dt = new DataTable();
             da.Fill(dt);
-        }
+        }      
         private void UCPlay_Load(object sender, EventArgs e)
         {
             guna2Panel5.Visible = false;
@@ -345,9 +345,13 @@ namespace KelimeOyunu
                     MessageBox.Show("Oyun bitti." + "\n" + "İsim: " + UCHome.isim + "\n" + "Toplam Puanınız: " + toplamp + "\n" + "Kalan Süre: " + sure + "\n" + "Tarih:" + DateTime.Now.ToString());
                     kisiEkle();
                     txtaydet();
+                    scoreUpdate();
+                   
+                    timer1.Enabled = false;
+                    timer2.Enabled = false;
                     UCHome uCHome = new UCHome(); //oyun bittiginde baslangic sayfasina geri doner
                     addUserControl(uCHome);
-                    baslaBtn.Visible = true;
+                    Home.guna2Panel1.Enabled = true;
                     return;
                 }
                 toplamp += soruPuani;
@@ -371,11 +375,15 @@ namespace KelimeOyunu
                 if (soru >= 15) // soruyu yanlis bilerek oyun biterse
                 {
                     MessageBox.Show("Oyun bitti." + UCHome.isim + "\n" + "Toplam Puanınız : " + toplamp.ToString() + "\n" + " Kalan Süre:" + sure + "\n" + "Tarih:" + DateTime.Now.ToString());
+                    timer1.Enabled = false;
+                    timer2.Enabled = false;
                     kisiEkle();
                     txtaydet();
+                    scoreUpdate();
+                    
                     UCHome uCHome = new UCHome(); //oyun bittiginde baslangic sayfasina geri doner
                     addUserControl(uCHome);
-                    baslaBtn.Visible = true;
+                    Home.guna2Panel1.Enabled = true;
                     return;
                 }
                 toplamPuanLbl.Text = "Toplam Puan " + " " + toplamp.ToString();
@@ -800,8 +808,11 @@ namespace KelimeOyunu
                 MessageBox.Show("Süreniz bitmiştir." + "\n" + "İsim: " + UCHome.isim + "\n" + "Toplam Puanınız: " + toplamp + "\n" + "Tarih:" + DateTime.Now.ToString() + "\n" + "Giriş sayfasına yönlendiriliyorsunuz.");
                 kisiEkle();
                 txtaydet();
-                UCHome ucHome = new UCHome();
-                addUserControl(ucHome);
+                scoreUpdate();
+               
+                UCHome uCHome = new UCHome(); //oyun bittiginde baslangic sayfasina geri doner
+                addUserControl(uCHome);
+                Home.guna2Panel1.Enabled = true;
             }
         }
         private void timer2_Tick(object sender, EventArgs e)
