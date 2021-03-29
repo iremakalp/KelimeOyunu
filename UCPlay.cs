@@ -47,7 +47,7 @@ namespace KelimeOyunu
             bag = new MySqlConnection("Server=127.0.0.1;Database=kelimeoyunu;user=root;Pwd=1562;SslMode=none");
             bag.Open();
 
-        }
+        } //veritabani baglantisi icin
         public void soruSec() //veritabanindan soru secmek icin calisir
         {
             baglanti();

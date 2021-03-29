@@ -36,12 +36,16 @@ namespace KelimeOyunu
             oyuncularData.DataSource = dt;
 
         }
-
         private void UCBest_Load(object sender, EventArgs e)
         {
             oyuncuListele();
-          
+            oyuncularData.AllowUserToAddRows = false;
+
         }
-       
+
+        private void dosyayaKaydetBtn_Click(object sender, EventArgs e)
+        {
+            txtAktar.txtKaydet(oyuncularData);
+        }
     }
 }
