@@ -6,8 +6,10 @@
     <members>
         <member name="T:Bunifu.UI.WinForms.BunifuRadialGauge">
             <summary>
-            Provides a highly customizable, arc-based, range value display meter 
-            for previewing value movements within definite ranges of motion.
+            Provides a highly customizable, arc-based, 
+            range-value display meter that works similar 
+            to a car's speed gauge for previewing value 
+            movements within definite ranges of motion.
             </summary>
         </member>
         <member name="M:Bunifu.UI.WinForms.BunifuRadialGauge.#ctor">
@@ -15,26 +17,10 @@
             Creates a new <see cref="T:Bunifu.UI.WinForms.BunifuRadialGauge"/> control.
             </summary>
         </member>
-        <member name="T:Bunifu.UI.WinForms.BunifuRadialGauge.CapStyles">
-            <summary>
-            Provides various cap styles used when 
-            drawing the control's edges.
-            </summary>
-        </member>
-        <member name="F:Bunifu.UI.WinForms.BunifuRadialGauge.CapStyles.Flat">
-            <summary>
-            Draws a flat cap.
-            </summary>
-        </member>
-        <member name="F:Bunifu.UI.WinForms.BunifuRadialGauge.CapStyles.Round">
-            <summary>
-            Draws a rounded cap.
-            </summary>
-        </member>
         <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.ShowRangeLabels">
             <summary>
             Gets or sets a value indicating whether
-            the gauge's range labels will be displayed.
+            the Gauge's range labels will be displayed.
             </summary>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.ShowValueLabel">
@@ -59,105 +45,15 @@
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.Value">
             <summary>
-            Gets or sets the gauge's pointer value.
+            Gets or sets the Gauge's pointer value.
             </summary>
-            <exception cref="T:System.ArgumentOutOfRangeException"> exception is thrown when the value 
-            set is outside expected range, that is, between the Minimum and Maximum set values.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"> exception is thrown when the value set is outside expected range, that is, between the Minimum and Maximum set values.</exception>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.ValueByTransition">
             <summary>
-            Gets or sets the gauge's pointer value using a smooth transition.
+            Gets or sets the Gauge's pointer value using a smooth transition.
             </summary>
-            <exception cref="T:System.ArgumentOutOfRangeException"> exception is thrown when the value 
-            set is outside expected range, that is, between the Minimum and Maximum set values.</exception>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.Minimum">
-            <summary>
-            Gets or sets the minimum range value.
-            </summary>
-            <exception cref="T:System.ArgumentOutOfRangeException"> exception is thrown when 
-            the Maximum property value is greater than the Minimum property value.</exception>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.Maximum">
-            <summary>
-            Gets or sets the maximum range value.
-            </summary>
-            <exception cref="T:System.ArgumentOutOfRangeException"> exception is thrown when 
-            the Minimum property value is greater than the Maximum property value.</exception>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.WarningMark">
-            <summary>
-            Gets or sets the point at which the gauge should
-            mark as the beginning of high value ranges.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.LighteningFactor">
-            <summary>
-            Gets or sets a lightening value/factor that will
-            be used to generate the progress background color
-            when the value set is either high or low. (Default is 70)
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.ProgressColorLow">
-            <summary>
-            Gets or sets the Gauge's progress color whenever 
-            it is within the low or minimum value ranges.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.ProgressColorHigh">
-            <summary>
-            Gets or sets the gauge's progress color whenever 
-            it is within the high or maximum value ranges as 
-            specified by the property <see cref="P:Bunifu.UI.WinForms.BunifuRadialGauge.ProgressHighValueMark"/>.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.RangeLabelsColor">
-            <summary>
-            Gets or sets the gauge's range labels' color.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.ValueLabelColor">
-            <summary>
-            Gets or sets the gauge's value label color.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.ProgressBackColor">
-            <summary>
-            Gets or sets the gauge's progress bakcground color.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.Prefix">
-            <summary>
-            Gets or sets the gauge's prefix text
-            that precedes the gauge value.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.Suffix">
-            <summary>
-            Gets or sets the Gauge's suffix text that 
-            is displayed besides the gauge value.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.Thickness">
-            <summary>
-            Gets or sets the gauge's progress thickness.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.Font">
-            <summary>
-            Gets or sets the gauge's standard font.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.ProgressCap">
-            <summary>
-            Gets or sets the rendering style 
-            of the progress edges.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.RangeLabelsFont">
-            <summary>
-            Gets or sets the Gauge's range labels' font.
-            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException"> exception is thrown when the value set is outside expected range, that is, between the Minimum and Maximum set values.</exception>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.RangeEnd">
             <summary>
@@ -177,19 +73,66 @@
             mark as the beginning of high value ranges.
             </summary>
         </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.LighteningFactor">
+            <summary>
+            Gets or sets a lightening value/factor that will
+            be used to generate the progress background color
+            when the value set is either high or low. (Default is 70)
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.ProgressColorLow">
+            <summary>
+            Gets or sets the Gauge's progress color whenever 
+            it is within the low or minimum value ranges.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.ProgressColorHigh">
+            <summary>
+            Gets or sets the Gauge's progress color whenever 
+            it is within the high or maximum value ranges as 
+            specified by the property <see cref="P:Bunifu.UI.WinForms.BunifuRadialGauge.ProgressHighValueMark"/>.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.RangeLabelsColor">
+            <summary>
+            Gets or sets the Gauge's range labels' color.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.ValueLabelColor">
+            <summary>
+            Gets or sets the Gauge's value label color.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.ProgressBackColor">
+            <summary>
+            Gets or sets the Gauge's progress bakcground color.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.Prefix">
+            <summary>
+            Gets or sets the Gauge's prefix text
+            that precedes the Gauge's value.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.Suffix">
+            <summary>
+            Gets or sets the Gauge's suffix text that 
+            is displayed besides the Gauge's value.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.Thickness">
+            <summary>
+            Gets or sets the Gauge's progress thickness.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.Font">
+            <summary>
+            Gets or sets the Gauge's standard font.
+            </summary>
+        </member>
         <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.GaugeRectangle">
             <summary>
             Gets the Gauge's drawing rectangle.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.BackgroundImage">
-            <summary>
-            Gets or sets the background image.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuRadialGauge.BackgroundImageLayout">
-            <summary>
-            Gets or sets the background image layout.
             </summary>
         </member>
         <member name="E:Bunifu.UI.WinForms.BunifuRadialGauge.ValueChanged">
@@ -220,22 +163,6 @@
             </summary>
             <param name="value">The new value to transition to.</param>
             <param name="transitionSpeed">(Optional) The transition speed in milliseconds.</param>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuRadialGauge.SetDefaults">
-            <summary>
-            Applies the control's default values.
-            </summary>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuRadialGauge.AlignLabels">
-            <summary>
-            Aligns the gauge's labels accordingly.
-            </summary>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuRadialGauge.ConvertToDegrees(System.Int32)">
-            <summary>
-            Converts an integer into degrees.
-            </summary>
-            <param name="value">The integer value.</param>
         </member>
         <member name="M:Bunifu.UI.WinForms.BunifuRadialGauge.ConvertRange(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>

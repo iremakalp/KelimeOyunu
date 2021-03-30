@@ -262,11 +262,6 @@
             component's host or parent form.
             </summary>
         </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuFormDock.ApplyShadows">
-            <summary>
-            Applies a surrounding shadow to the target form.
-            </summary>
-        </member>
         <member name="M:Bunifu.UI.WinForms.BunifuFormDock.AddBottomSeparator(System.Drawing.Color,System.Int32,System.Boolean)">
             <summary>
             Adds a bottom Line Separator to the attached Parent Form.
@@ -469,6 +464,12 @@
         <member name="M:Bunifu.UI.WinForms.BunifuFormDock.AddFormBorders(System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
             <summary>
             Adds borders to the parent form.
+            </summary>
+        </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuFormDock.MaskBottomMargin">
+            <summary>
+            Masks the bottom margin added to the
+            Parent Form when a drop-shadow is provided.
             </summary>
         </member>
         <member name="M:Bunifu.UI.WinForms.BunifuFormDock.CreateBitmap(System.Drawing.Color,System.Drawing.Size)">
@@ -1382,6 +1383,287 @@
             thread as this is called from.
             </remarks>
         </member>
+        <member name="T:Utilities.BunifuFormDock.BunifuImageButtonExtended">
+            <summary>
+            Provides button-like capabilities and image manipulation features when working with images.
+            </summary>
+        </member>
+        <member name="T:Utilities.BunifuFormDock.BunifuImageButtonExtended.FlipOrientation">
+            <summary>
+            Provides flip-orientation options for images.
+            </summary>
+        </member>
+        <member name="F:Utilities.BunifuFormDock.BunifuImageButtonExtended.FlipOrientation.Normal">
+            <summary>
+            Flip image to normal view.
+            </summary>
+        </member>
+        <member name="F:Utilities.BunifuFormDock.BunifuImageButtonExtended.FlipOrientation.Horizontal">
+            <summary>
+            Flip image horizontally.
+            </summary>
+        </member>
+        <member name="F:Utilities.BunifuFormDock.BunifuImageButtonExtended.FlipOrientation.Vertical">
+            <summary>
+            Flip image vertically.
+            </summary>
+        </member>
+        <member name="T:Utilities.BunifuFormDock.BunifuImageButtonExtended.ImageStates">
+            <summary>
+            Provides the various supported image-states
+            generated from the applied Image.
+            </summary>
+        </member>
+        <member name="F:Utilities.BunifuFormDock.BunifuImageButtonExtended.ImageStates.Normal">
+            <summary>
+            Returns the normal image.
+            </summary>
+        </member>
+        <member name="F:Utilities.BunifuFormDock.BunifuImageButtonExtended.ImageStates.TotallyFaded">
+            <summary>
+            Returns a totally blurred image.
+            </summary>
+        </member>
+        <member name="F:Utilities.BunifuFormDock.BunifuImageButtonExtended.ImageStates.MediallyFaded">
+            <summary>
+            Returns a medially blurred image.
+            </summary>
+        </member>
+        <member name="F:Utilities.BunifuFormDock.BunifuImageButtonExtended.ImageStates.PartiallyFaded">
+            <summary>
+            Returns a partially blurred image.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.ImageMargin">
+            <summary>
+            Gets or sets the distance between the container and the underlying image.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.Zoom">
+            <summary>
+            Gets or sets the distance between the container and the underlying image.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.Rotation">
+            <summary>
+            Gets or sets the angle of rotation for the image.
+            Please provide a value between 0 and 360.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.ZoomSpeed">
+            <summary>
+            Gets or sets the time in milliseconds the zooming animation takes when active.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.Flip">
+            <summary>
+            Flips the image to any given orientation.
+            Supports both Vertical and Horizontal orientation-flipping options.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.Image">
+            <summary>
+            Gets or sets the image displayed in the image button.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.ImageActive">
+            <summary>
+            (This property has been deprecated as of version 1.6.0.0. Please use the property 'ActiveImage' instead.)
+            Gets or sets the image to be applied whenever the image button is active or hovered onto.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.ActiveImage">
+            <summary>
+            Gets or sets the image to be applied whenever the image button is active or hovered onto.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.ImageSize">
+            <summary>
+            Gets or sets the default image size.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.ImageZoomSize">
+            <summary>
+            Gets or sets the maximum size of the image when hovered onto or active.
+            This defaults to the standard set size of the control.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.ToolTipText">
+            <summary>
+            Allows you to easily get or set some ToolTip information to 
+            be displayed to the user on mouse-hovering over the control.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.ShowCursorChanges">
+            <summary>
+             Gets or sets a value indicating whether the control 
+             will show cursor changes during mouse-hover events.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.ShowActiveImage">
+            <summary>
+            Sets a value indicating whether the 'ActiveImage' 
+            will be applied on mouse-hover.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.AllowZooming">
+            <summary>
+            Gets or sets a value indicating whether zooming is enabled.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.AllowAnimations">
+            <summary>
+            Gets or sets a value indicating whether animations are enabled.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.FadeWhenInactive">
+            <summary>
+            Automatically fades the image when inactive.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.IsZoomedIn">
+            <summary>
+            Gets a value indicating whether the image button is currently zoomed-in.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.ShowSizeMarkers">
+            <summary>
+             Gets or sets a value indicating whether the size markers 
+             displayed at the control's top-area will be visible during design-time.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.ShowImageBorders">
+            <summary>
+             Gets or sets a value indicating whether borders will 
+             be viewed for the image applied during design-time.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.CreateParams">
+            <summary>
+            Overrides the CreateParams method to stop flickering issues 
+            by setting the "WS_EX_COMPOSITED" (0x02000000) style.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.ImageLocation">
+            <summary>
+            Gets or sets the path or URL for the image to display in the Image Button.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.WaitOnLoad">
+            <summary>
+            Gets or sets a value indicating whether an image is loaded synchronously.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.InitialImage">
+            <summary>
+            Gets or sets the image displayed in the Image
+            Button when the main image is loading.
+            </summary>
+        </member>
+        <member name="P:Utilities.BunifuFormDock.BunifuImageButtonExtended.ErrorImage">
+            <summary>
+            Gets or sets the image displayed in the Image
+            Button when an error occurs during the image-loading
+            process or if the image load is canceled.
+            </summary>
+        </member>
+        <member name="M:Utilities.BunifuFormDock.BunifuImageButtonExtended.Calculate">
+            <summary>
+            Calculates the correct image-size as per the applied state.
+            </summary>
+        </member>
+        <member name="M:Utilities.BunifuFormDock.BunifuImageButtonExtended.Render(Utilities.BunifuFormDock.BunifuImageButtonExtended.ImageStates)">
+            <summary>
+            Renders the required image as per the applied state.
+            </summary>
+            <param name="state">The image-state-type to be used.</param>
+        </member>
+        <member name="M:Utilities.BunifuFormDock.BunifuImageButtonExtended.Render(System.Int32)">
+            <summary>
+            Renders the required image as per the applied state.
+            </summary>
+            <param name="state">The image-state to be used.</param>
+        </member>
+        <member name="M:Utilities.BunifuFormDock.BunifuImageButtonExtended.ZoomIn">
+            <summary>
+            Zooms in the image to the preset size.
+            </summary>
+        </member>
+        <member name="M:Utilities.BunifuFormDock.BunifuImageButtonExtended.ZoomOut">
+            <summary>
+            Zooms out the image to its default size.
+            </summary>
+        </member>
+        <member name="M:Utilities.BunifuFormDock.BunifuImageButtonExtended.Rotate(System.Int32,System.Boolean,System.Int32)">
+            <summary>
+            Rotates the image to a set angle of rotation.
+            </summary>
+            <param name="allowAnimation">
+            Allow animation the rotation event? If yes, the rotation will be animated from one angle to another.
+            </param>
+            <param name="angle">
+            The angle of rotation to apply. Please provide a value between 0 and 360.
+            </param>
+            <param name="animationSpeed">
+            The rotating animation speed in milliseconds to apply. Default speed is 500(ms).
+            </param>
+        </member>
+        <member name="M:Utilities.BunifuFormDock.BunifuImageButtonExtended.Load(System.String)">
+            <summary>
+            Sets the ImageLocation to the specified URL and displays the image indicated.
+            </summary>
+            <param name="url">The path for the image to display in the Image Button.</param>
+            Exceptions:
+            <exception cref="T:System.InvalidOperationException">Thrown if url is null or an empty string.</exception>
+            <exception cref="T:System.Net.WebException">Thrown if url refers to an image on the Web that cannot be accessed.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if url refers to a file that is not an image.</exception>
+            <exception cref="!:IO.FileNotFoundException">Thrown if url refers to a file that does not exist.</exception>
+        </member>
+        <member name="M:Utilities.BunifuFormDock.BunifuImageButtonExtended.Load">
+            <summary>
+            Displays the image specified by the ImageLocation property of the Image Button.
+            </summary>
+            Exceptions:
+            <exception cref="T:System.InvalidOperationException">Thrown if ImageLocation is null or an empty string.</exception>
+        </member>
+        <member name="M:Utilities.BunifuFormDock.BunifuImageButtonExtended.LoadAsync">
+            <summary>
+            Loads the image asynchronously.
+            </summary>
+        </member>
+        <member name="M:Utilities.BunifuFormDock.BunifuImageButtonExtended.LoadAsync(System.String)">
+            <summary>
+            Loads the image at the specified location, asynchronously.
+            </summary>
+            <param name="url">The path for the image to display in the Image Button.</param>
+        </member>
+        <member name="M:Utilities.BunifuFormDock.BunifuImageButtonExtended.CancelAsync">
+            <summary>
+            Cancels an asynchronous image load.
+            </summary>
+        </member>
+        <member name="M:Utilities.BunifuFormDock.BunifuImageButtonExtended.IsInDesignMode">
+            <summary>
+            Determines whether the hosting process is in design-mode.
+            </summary>
+        </member>
+        <member name="F:Utilities.BunifuFormDock.BunifuImageButtonExtended.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Utilities.BunifuFormDock.BunifuImageButtonExtended.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Utilities.BunifuFormDock.BunifuImageButtonExtended.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="F:Utilities.BunifuFormDock.DragControlsEditor.components">
             <summary>
             Required designer variable.
@@ -1398,6 +1680,62 @@
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
+        </member>
+        <member name="T:Utilities.BunifuToolTip.ImageExtensions">
+            <summary>
+            Image-rendering extensions class for Bunifu Image Button.
+            </summary>
+        </member>
+        <member name="T:Utilities.BunifuToolTip.ImageExtensions.FlipOrientation">
+            <summary>
+            Provides flip-orientation options for image containers.
+            </summary>
+        </member>
+        <member name="F:Utilities.BunifuToolTip.ImageExtensions.FlipOrientation.Normal">
+            <summary>
+            Flip image to normal setting.
+            </summary>
+        </member>
+        <member name="F:Utilities.BunifuToolTip.ImageExtensions.FlipOrientation.Horizontal">
+            <summary>
+            Flip image horizontally.
+            </summary>
+        </member>
+        <member name="F:Utilities.BunifuToolTip.ImageExtensions.FlipOrientation.Vertical">
+            <summary>
+            Flip image vertically.
+            </summary>
+        </member>
+        <member name="M:Utilities.BunifuToolTip.ImageExtensions.Rotate(System.Drawing.Graphics,System.Double,System.Int32,System.Int32)">
+            <summary>
+            Rotates an image container to a specified angle or degree.
+            </summary>
+            <param name="graphics">The graphics object to be used.</param>
+            <param name="rotation">The angle of rotation.</param>
+            <param name="width">The final width of the image.</param>
+            <param name="height">The final height of the image.</param>
+        </member>
+        <member name="M:Utilities.BunifuToolTip.ImageExtensions.Flip(System.Drawing.Graphics,Utilities.BunifuToolTip.ImageExtensions.FlipOrientation,System.Int32,System.Int32)">
+            <summary>
+            Flips an image container to a specified position.
+            </summary>
+            <param name="graphics">The graphics object to be used.</param>
+            <param name="flip">The flip orientation.</param>
+            <param name="width">The final width of the image.</param>
+            <param name="height">The final height of the image.</param>
+        </member>
+        <member name="M:Utilities.BunifuToolTip.ImageExtensions.Flip(System.Drawing.Image,Utilities.BunifuToolTip.ImageExtensions.FlipOrientation)">
+            <summary>
+            Flips an image container to a specified position.
+            </summary>
+            <param name="graphics">The graphics object to be used.</param>
+            <param name="flip">The flip orientation.</param>
+        </member>
+        <member name="M:Utilities.BunifuToolTip.ImageExtensions.ToRotateFlip(Utilities.BunifuToolTip.ImageExtensions.FlipOrientation)">
+            <summary>
+            Flips an image container to a specified position without an angle of rotation.
+            </summary>
+            <param name="flip">The flip orientation.</param>
         </member>
     </members>
 </doc>

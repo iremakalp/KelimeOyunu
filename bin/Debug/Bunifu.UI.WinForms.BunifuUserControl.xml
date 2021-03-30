@@ -6,8 +6,8 @@
     <members>
         <member name="T:Bunifu.UI.WinForms.BunifuUserControl">
             <summary>
-            Provides a rich and customizable User Control in 
-            place of the standard Windows Forms User Control.
+            Provides a rich and customizable Bunifu User Control 
+            in place of the standard Windows Forms User Control.
             </summary>
             <seealso cref="T:System.Windows.Forms.UserControl" />
         </member>
@@ -31,36 +31,6 @@
             Applies a rounded control design.
             </summary>
         </member>
-        <member name="T:Bunifu.UI.WinForms.BunifuUserControl.BorderStyles">
-            <summary>
-            Provides different border style options.
-            </summary>
-        </member>
-        <member name="F:Bunifu.UI.WinForms.BunifuUserControl.BorderStyles.Solid">
-            <summary>
-            A solid border.
-            </summary>
-        </member>
-        <member name="F:Bunifu.UI.WinForms.BunifuUserControl.BorderStyles.Dash">
-            <summary>
-            A dashed border.
-            </summary>
-        </member>
-        <member name="F:Bunifu.UI.WinForms.BunifuUserControl.BorderStyles.Dot">
-            <summary>
-            A dotted border.
-            </summary>
-        </member>
-        <member name="F:Bunifu.UI.WinForms.BunifuUserControl.BorderStyles.DashDot">
-            <summary>
-            A dashed and dotted recursive border.
-            </summary>
-        </member>
-        <member name="F:Bunifu.UI.WinForms.BunifuUserControl.BorderStyles.DashDotDot">
-            <summary>
-            A dashed, dotted-dotted recursive border.
-            </summary>
-        </member>
         <member name="P:Bunifu.UI.WinForms.BunifuUserControl.ShowBorders">
             <summary>
             Gets or sets a value indicating whether borders
@@ -77,6 +47,12 @@
             Gets or sets the control's Border Radius.
             </summary>
         </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuUserControl.Style">
+            <summary>
+            Gets or sets the control's style with
+            regards to its border-region.
+            </summary>
+        </member>
         <member name="P:Bunifu.UI.WinForms.BunifuUserControl.BackgroundColor">
             <summary>
             Gets or sets the control's Back Color.
@@ -85,17 +61,6 @@
         <member name="P:Bunifu.UI.WinForms.BunifuUserControl.BorderColor">
             <summary>
             Gets or sets the control's Border Color.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuUserControl.Style">
-            <summary>
-            Gets or sets the control's style with
-            regards to its border-region.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuUserControl.BorderStyle">
-            <summary>
-            [Beta] Gets or sets the border style.
             </summary>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuUserControl.Image">
@@ -153,28 +118,6 @@
             the canvas area where drawing takes place.
             </summary>
         </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuUserControl.Redraw(System.Drawing.Graphics)">
-            <summary>
-            Invalidates the entire control's surface.
-            </summary>
-            <param name="graphics">The <see cref="T:System.Drawing.Graphics"/> object to be used.</param>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuUserControl.DrawCanvas(System.Drawing.Graphics,System.Int32,System.Int32,System.Drawing.Color,System.Drawing.Color,Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles)">
-            <summary>
-            Draws a user-defined Graphics canvas.
-            </summary>
-            <param name="graphics">The Graphics canvas.</param>
-            <param name="Bounds">The canvas rectangle-bounds.</param>
-            <param name="radius">The canvas corner-radius.</param>
-            <param name="fillPen">The pen used to draw objects inside the canvas.</param>
-            <param name="backColor">Color of the fill.</param>
-            <param name="checkBoxState">The state to manipulate/render.</param>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuUserControl.SetDefaults">
-            <summary>
-            Applies the control's default properties.
-            </summary>
-        </member>
         <member name="E:Bunifu.UI.WinForms.BunifuUserControl.ShowBordersChanged">
             <summary>
             Raised whenever the <see cref="P:Bunifu.UI.WinForms.BunifuUserControl.ShowBorders"/> property has been changed.
@@ -205,9 +148,26 @@
             Raised whenever the <see cref="P:Bunifu.UI.WinForms.BunifuUserControl.Style"/> property has been changed.
             </summary>
         </member>
-        <member name="E:Bunifu.UI.WinForms.BunifuUserControl.BorderStyleChanged">
+        <member name="M:Bunifu.UI.WinForms.BunifuUserControl.Redraw(System.Drawing.Graphics)">
             <summary>
-            Raised whenever the <see cref="P:Bunifu.UI.WinForms.BunifuUserControl.BorderStyle"/> property has been changed.
+            Invalidates the entire control's surface.
+            </summary>
+            <param name="graphics">The <see cref="T:System.Drawing.Graphics"/> object to be used.</param>
+        </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuUserControl.DrawCanvas(System.Drawing.Graphics,System.Int32,System.Int32,System.Drawing.Color,System.Drawing.Color,Bunifu.UI.WinForms.BunifuUserControl.UserControlStyles)">
+            <summary>
+            Draws a user-defined Graphics canvas.
+            </summary>
+            <param name="graphics">The Graphics canvas.</param>
+            <param name="Bounds">The canvas rectangle-bounds.</param>
+            <param name="radius">The canvas corner-radius.</param>
+            <param name="fillPen">The pen used to draw objects inside the canvas.</param>
+            <param name="backColor">Color of the fill.</param>
+            <param name="checkBoxState">The state to manipulate/render.</param>
+        </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuUserControl.SetDefaults">
+            <summary>
+            Applies the control's default properties.
             </summary>
         </member>
         <member name="F:Bunifu.UI.WinForms.BunifuUserControl.components">

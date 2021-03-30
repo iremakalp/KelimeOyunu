@@ -48,12 +48,12 @@ namespace KelimeOyunu
                 if (dosyakaydet.ShowDialog() == DialogResult.OK)
                 {
                     TextWriter txt = new StreamWriter(dosyakaydet.FileName);
-                    foreach (DataGridViewColumn sutun in veriTablosu.Columns)
+                    foreach (DataGridViewColumn sutun in veriTablosu.Columns) //basliklari ceker
                     {
                         txt.Write(sutun.HeaderText + "    ");
                     }
                     txt.Write("\n");
-                    foreach (DataGridViewRow satir in veriTablosu.Rows)
+                    foreach (DataGridViewRow satir in veriTablosu.Rows) //sirayla satir sayisina gore hucre bilgilerini toplar
                     {
                         foreach (DataGridViewCell hucre in satir.Cells)
                         {
@@ -62,7 +62,7 @@ namespace KelimeOyunu
                         txt.Write("\n");
                     }
                     txt.Close();
-                    MessageBox.Show("TXT dosyası başarıyla oluşturuldu!\n" + "Dosya Konumu: " + dosyakaydet.FileName, "İşlem Tamam");
+                    MessageBox.Show("Dosya kaydedildi!");
                 }
             }
             catch (Exception hata)

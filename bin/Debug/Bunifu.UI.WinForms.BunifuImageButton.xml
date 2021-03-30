@@ -6,7 +6,7 @@
     <members>
         <member name="T:Bunifu.UI.WinForms.BunifuImageButton">
             <summary>
-            Provides button-like capabilities and image manipulation features when working with images/icons.
+            Provides button-like capabilities and image manipulation features when working with images.
             </summary>
         </member>
         <member name="M:Bunifu.UI.WinForms.BunifuImageButton.#ctor">
@@ -79,13 +79,6 @@
         <member name="F:Bunifu.UI.WinForms.BunifuImageButton.BorderStyles.Round">
             <summary>
             Specifies a rounded design.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuImageButton.AllowToggling">
-            <summary>
-            Gets or sets a value indicating whether 
-            the button will be automatically toggled 
-            to receive or release focus when clicked.
             </summary>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuImageButton.BorderOptions">
@@ -180,12 +173,6 @@
             Gets or sets a value indicating whether zooming is enabled.
             </summary>
         </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuImageButton.AllowZoomingOnFocus">
-            <summary>
-            Gets or sets a value indicating whether 
-            the image will be zoomed-in on focus.
-            </summary>
-        </member>
         <member name="P:Bunifu.UI.WinForms.BunifuImageButton.AllowAnimations">
             <summary>
             Gets or sets a value indicating whether animations are enabled.
@@ -201,11 +188,6 @@
             Gets a value indicating whether the image button is currently zoomed-in.
             </summary>
         </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuImageButton.DialogResult">
-            <summary>
-            Gets or sets the <see cref="P:Bunifu.UI.WinForms.BunifuImageButton.DialogResult"/> returned by the Image Button.
-            </summary>
-        </member>
         <member name="P:Bunifu.UI.WinForms.BunifuImageButton.ShowSizeMarkers">
             <summary>
              Gets or sets a value indicating whether the size markers 
@@ -216,12 +198,6 @@
             <summary>
              Gets or sets a value indicating whether borders will 
              be viewed for the image applied during design-time.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuImageButton.IsDefault">
-            <summary>
-            Gets or sets a value indicating whether the 
-            Image button control is the default button.
             </summary>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuImageButton.ImageLocation">
@@ -253,21 +229,38 @@
             by setting the "WS_EX_COMPOSITED" (0x02000000) style.
             </summary>
         </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuImageButton.Calculate">
+            <summary>
+            Calculates the correct image-size as per the applied state.
+            </summary>
+        </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuImageButton.Render(Bunifu.UI.WinForms.BunifuImageButton.ImageStates)">
+            <summary>
+            Renders the required image as per the applied state.
+            </summary>
+            <param name="state">The image-state-type to be used.</param>
+        </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuImageButton.Render(System.Int32)">
+            <summary>
+            Renders the required image as per the applied state.
+            </summary>
+            <param name="state">The image-state to be used.</param>
+        </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuImageButton.DrawCanvas(System.Drawing.Graphics,System.Drawing.Rectangle,System.Int32,System.Int32,System.Drawing.Color,System.Drawing.Color,Bunifu.UI.WinForms.BunifuImageButton.BorderStyles)">
+            <summary>
+            Draws a user-defined Graphics canvas.
+            </summary>
+            <param name="graphics">The Graphics canvas.</param>
+            <param name="Bounds">The canvas rectangle-bounds.</param>
+            <param name="radius">The canvas corner-radius.</param>
+            <param name="borderThickness">The canvas border-thickness.</param>
+            <param name="borderColor">The canvas border-color.</param>
+            <param name="style">The canvas border-style.</param>
+            <param name="backColor">Color of the fill.</param>
+        </member>
         <member name="M:Bunifu.UI.WinForms.BunifuImageButton.Refresh">
             <summary>
             Redraws the control's surface.
-            </summary>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuImageButton.NotifyDefault(System.Boolean)">
-            <summary>
-            Notifies the iMAGE Button whether it is the default 
-            button so that it can adjust its appearance accordingly.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuImageButton.PerformClick">
-            <summary>
-            Raises the control's Click event.
             </summary>
         </member>
         <member name="M:Bunifu.UI.WinForms.BunifuImageButton.ZoomIn">
@@ -331,34 +324,15 @@
             Cancels an asynchronous image load.
             </summary>
         </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuImageButton.Calculate">
+        <member name="M:Bunifu.UI.WinForms.BunifuImageButton.PerformClick">
             <summary>
-            Calculates the correct image-size as per the applied state.
+            Raises the control's Click event.
             </summary>
         </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuImageButton.Render(Bunifu.UI.WinForms.BunifuImageButton.ImageStates)">
+        <member name="M:Bunifu.UI.WinForms.BunifuImageButton.IsInDesignMode">
             <summary>
-            Renders the required image as per the applied state.
+            Determines whether the hosting process is in design-mode.
             </summary>
-            <param name="state">The image-state-type to be used.</param>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuImageButton.Render(System.Int32)">
-            <summary>
-            Renders the required image as per the applied state.
-            </summary>
-            <param name="state">The image-state to be used.</param>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuImageButton.DrawCanvas(System.Drawing.Graphics,System.Drawing.Rectangle,System.Int32,System.Int32,System.Drawing.Color,System.Drawing.Color,Bunifu.UI.WinForms.BunifuImageButton.BorderStyles)">
-            <summary>
-            Draws a user-defined Graphics canvas.
-            </summary>
-            <param name="graphics">The Graphics canvas.</param>
-            <param name="Bounds">The canvas rectangle-bounds.</param>
-            <param name="radius">The canvas corner-radius.</param>
-            <param name="borderThickness">The canvas border-thickness.</param>
-            <param name="borderColor">The canvas border-color.</param>
-            <param name="style">The canvas border-style.</param>
-            <param name="backColor">Color of the fill.</param>
         </member>
         <member name="F:Bunifu.UI.WinForms.BunifuImageButton.components">
             <summary> 

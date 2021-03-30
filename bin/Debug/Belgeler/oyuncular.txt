@@ -4,3 +4,6 @@
 İsim: Cansu  Puan: 7700 Kalan Süre: 02 : 30  Oynandığı Tarih: 29.03.2021 17:56:54
 İsim: Ahmet  Puan: 1300 Kalan Süre: 03 : 34  Oynandığı Tarih: 29.03.2021 18:01:55
 İsim: Cihan  Puan: 2800 Kalan Süre: 01 : 28  Oynandığı Tarih: 29.03.2021 18:08:36
+
+İsim: Cenk  Puan: 8400 Kalan Süre: 01 : 23  Oynandığı Tarih: 30.03.2021 17:07:41
+İsim: Efe  Puan: 2400 Kalan Süre: 00 : 00  Oynandığı Tarih: 30.03.2021 17:35:58

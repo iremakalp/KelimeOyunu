@@ -650,6 +650,17 @@
             <param name="newEnd">The new ending point in the user-specified range.</param>
             <param name="value">The value to be set within the range.</param>
         </member>
+        <member name="T:Bunifu.UI.WinForms.BunifuHScrollBar.BunifuHScrollBarActionList">
+            <summary>
+            Initializes a new instance of the <see cref="T:Bunifu.UI.WinForms.BunifuHScrollBar.BunifuHScrollBarActionList"/> class.
+            </summary>
+        </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuHScrollBar.BunifuHScrollBarActionList.GetSortedActionItems">
+            <summary>
+            Implementation of this abstract method creates Smart Tag items,
+            associates their targets, and collects them into a list.
+            </summary>
+        </member>
         <member name="T:Bunifu.UI.WinForms.BunifuHScrollBar.ScrollBarState">
             <summary>
             An abstract class used to define various states within Bunifu ScrollBars.
@@ -688,17 +699,6 @@
             <see cref="P:Bunifu.UI.WinForms.BunifuHScrollBar.ScrollBarState.ThumbColor"/>.
             </summary>
             <returns>String</returns>
-        </member>
-        <member name="T:Bunifu.UI.WinForms.BunifuHScrollBar.BunifuHScrollBarActionList">
-            <summary>
-            Initializes a new instance of the <see cref="T:Bunifu.UI.WinForms.BunifuHScrollBar.BunifuHScrollBarActionList"/> class.
-            </summary>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuHScrollBar.BunifuHScrollBarActionList.GetSortedActionItems">
-            <summary>
-            Implementation of this abstract method creates Smart Tag items,
-            associates their targets, and collects them into a list.
-            </summary>
         </member>
         <member name="F:Bunifu.UI.WinForms.BunifuHScrollBar.components">
             <summary>

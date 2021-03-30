@@ -6,7 +6,7 @@
     <members>
         <member name="T:Bunifu.UI.WinForms.BunifuPictureBox">
             <summary>
-            Provides a customizable Picture Box with more styling options.
+            Class BunifuPictureBox.
             </summary>
             <seealso cref="T:System.Windows.Forms.PictureBox" />
         </member>
@@ -15,53 +15,65 @@
             Initializes a new instance of the <see cref="T:Bunifu.UI.WinForms.BunifuPictureBox" /> class.
             </summary>
         </member>
-        <member name="T:Bunifu.UI.WinForms.BunifuPictureBox.Types">
+        <member name="M:Bunifu.UI.WinForms.BunifuPictureBox.OnPaint(System.Windows.Forms.PaintEventArgs)">
             <summary>
-            Provides a list of shapes the 
-            control can be rendered in.
+            Raises the <see cref="E:System.Windows.Forms.Control.Paint" /> event.
+            </summary>
+            <param name="pe">A <see cref="T:System.Windows.Forms.PaintEventArgs" /> that contains the event data.</param>
+        </member>
+        <member name="F:Bunifu.UI.WinForms.BunifuPictureBox.types">
+            <summary>
+            The types
             </summary>
         </member>
-        <member name="F:Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle">
+        <member name="F:Bunifu.UI.WinForms.BunifuPictureBox.borderRadius">
             <summary>
-            Circular design.
+            The border radius
+            </summary>
+        </member>
+        <member name="F:Bunifu.UI.WinForms.BunifuPictureBox.circular">
+            <summary>
+            The circular
+            </summary>
+        </member>
+        <member name="T:Bunifu.UI.WinForms.BunifuPictureBox.Types">
+            <summary>
+            Enum Types
             </summary>
         </member>
         <member name="F:Bunifu.UI.WinForms.BunifuPictureBox.Types.Square">
             <summary>
-            Square design.
+            The square
             </summary>
         </member>
         <member name="F:Bunifu.UI.WinForms.BunifuPictureBox.Types.Custom">
             <summary>
-            Custom design.
+            The custom
             </summary>
         </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuPictureBox.AutoSizeHeight">
+        <member name="P:Bunifu.UI.WinForms.BunifuPictureBox.Type">
             <summary>
-            Gets or sets a value indicating whether the 
-            PictureBox will be autosized on resize.
+            Gets or sets the type.
             </summary>
+            <value>The type.</value>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuPictureBox.BorderRadius">
             <summary>
             Gets or sets the border radius.
             </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuPictureBox.Type">
-            <summary>
-            Gets or sets the control's shape.
-            </summary>
+            <value>The border radius.</value>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuPictureBox.IsCircle">
             <summary>
-            Gets a value indicating whether the control is rendered as a circle.
+            Gets or sets a value indicating whether this instance is circle.
             </summary>
+            <value><c>true</c> if this instance is circle; otherwise, <c>false</c>.</value>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuPictureBox.AllowFocused">
             <summary>
-            Gets or sets a value indicating 
-            whether control allows focus.
+            Gets or sets a value indicating whether [allow focused].
             </summary>
+            <value><c>true</c> if [allow focused]; otherwise, <c>false</c>.</value>
         </member>
         <member name="M:Bunifu.UI.WinForms.BunifuPictureBox.DrawPictureBox(System.Windows.Forms.PaintEventArgs)">
             <summary>
@@ -77,10 +89,12 @@
             <param name="radius">The radius.</param>
             <returns>GraphicsPath.</returns>
         </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuPictureBox.ResizeControl">
+        <member name="M:Bunifu.UI.WinForms.BunifuPictureBox.BunifuPictureBox_Resize(System.Object,System.EventArgs)">
             <summary>
-            Auto-resizes the control's height based on its width.
+            Handles the Resize event of the BunifuPictureBox control.
             </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
         </member>
         <member name="F:Bunifu.UI.WinForms.BunifuPictureBox.components">
             <summary>

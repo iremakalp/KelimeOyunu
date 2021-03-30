@@ -7,7 +7,7 @@
         <member name="T:Bunifu.UI.WinForms.BunifuButton.BunifuButton">
             <summary>
             Provides a highly customizable button with improved 
-            styling options and great feature improvements.
+            styling options and additional feature improvements.
             </summary>
         </member>
         <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.#ctor">
@@ -92,18 +92,6 @@
             to receive or release focus when clicked.
             </summary>
         </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.AllowAnimations">
-            <summary>
-            Gets or sets a value indicating whether animations
-            will be allowed when the button is active.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.AllowMouseEffects">
-            <summary>
-            Gets or sets a value indicating whether mouse effects will 
-            be allowed whenever mouse-events are being captured.
-            </summary>
-        </member>
         <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.AutoGenerateColors">
             <summary>
             When set to true, the button's <see cref="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IdleFillColor"/> 
@@ -111,29 +99,11 @@
             colors for the various states supported.
             </summary>
         </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.AutoRoundBorders">
-            <summary>
-            Gets or sets a value indicating whether 
-            the borders will be automatically rounded.
-            </summary>
-        </member>
         <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.AutoSize">
             <summary>
             Specifies whether the Button will automatically 
             size it's with to fit its contents. Use <see cref="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.TextMarginLeft"/> 
             property to set the <see cref="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.Text"/> padding (edges' distance).
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.AutoSizeLeftIcon">
-            <summary>
-            When set to true, the left icon will 
-            be autosized on resizing the button.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.AutoSizeRightIcon">
-            <summary>
-            When set to true, the right icon will 
-            be autosized on resizing the button.
             </summary>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IndicateFocus">
@@ -154,9 +124,14 @@
             both the left and the right icon.
             </summary>
         </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IconSize">
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IconMarginLeft">
             <summary>
-            Gets or sets the left and right icon size.
+            Gets or sets the Button's left icon margin.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.TextMarginLeft">
+            <summary>
+            Gets or sets the Button's left text margin.
             </summary>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IdleBorderRadius">
@@ -179,26 +154,6 @@
             <summary>
             Sets how dark or light the button's color will 
             be whenever a mouse-click event has occurred.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.Text">
-            <summary>
-            Gets or sets the text associated with this control.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IdleBorderColor">
-            <summary>
-            Gets or sets the Button's border color when idle/inactive.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IdleFillColor">
-            <summary>
-            Gets or sets the Button's background/fill color when idle.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.ForeColor">
-            <summary>
-            Gets or sets the Button's foreground color.
             </summary>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IconRightCursor">
@@ -226,6 +181,41 @@
             Gets or sets the Button's default font.
             </summary>
         </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.Text">
+            <summary>
+            Gets or sets the text associated with this control.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.DisabledBorderColor">
+            <summary>
+            Gets or sets the Button's border color when disabled.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.DisabledFillColor">
+            <summary>
+            Gets or sets the Button's background color when disabled.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.DisabledForecolor">
+            <summary>
+            Gets or sets the Button's foreground color when disabled.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IdleBorderColor">
+            <summary>
+            Gets or sets the Button's border color when idle/inactive.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IdleFillColor">
+            <summary>
+            Gets or sets the Button's background/fill color when idle.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.ForeColor">
+            <summary>
+            Gets or sets the Button's foreground color.
+            </summary>
+        </member>
         <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.OnIdleState">
             <summary>
             Gets or sets the Button's idle state design.
@@ -241,49 +231,9 @@
             Gets or sets the Button's pressed state design.
             </summary>
         </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.OnDisabledState">
-            <summary>
-            Gets or sets the Button's disabled state design.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.TextAlign">
-            <summary>
-            Gets or sets the Button's text alignment.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IconLeftAlign">
-            <summary>
-            Gets or sets the Button's left icon alignment.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IconRightAlign">
-            <summary>
-            Gets or sets the Button's right icon alignment.
-            </summary>
-        </member>
         <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyle">
             <summary>
             Gets or sets the Button's border style.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.Padding">
-            <summary>
-            Gets or sets the default text padding.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.TextPadding">
-            <summary>
-            Gets or sets the default text padding.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IconLeftPadding">
-            <summary>
-            Gets or sets the left icon's padding.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IconRightPadding">
-            <summary>
-            Gets or sets the right icon's padding.
             </summary>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.FocusState">
@@ -292,15 +242,25 @@
             contains focus while the cursor is away.
             </summary>
         </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.DialogResult">
+            <summary>
+            Gets or sets the <see cref="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.DialogResult"/> returned by the Button.
+            </summary>
+        </member>
         <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.CustomizableEdges">
             <summary>
             Gets or sets the list of border edges that will 
             be customized whenever the border radius is applied.
             </summary>
         </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.DialogResult">
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.LeftIcon">
             <summary>
-            Gets or sets the <see cref="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.DialogResult"/> returned by the Button.
+            Gets the left icon.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.RightIcon">
+            <summary>
+            Gets the right icon.
             </summary>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.UseDefaultRadiusAndThickness">
@@ -321,9 +281,14 @@
             the button has been clicked.
             </summary>
         </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IconMarginLeft">
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.OnDisabledState">
             <summary>
-            Gets or sets the Button's left icon margin.
+            Gets or sets the Button's disabled state design.
+            </summary>
+        </member>
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonText">
+            <summary>
+            Gets or sets the text associated with this control.
             </summary>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonTextMarginLeft">
@@ -331,34 +296,9 @@
             Gets or sets the Button's left text margin.
             </summary>
         </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.TextMarginLeft">
-            <summary>
-            Gets or sets the Button's left text margin.
-            </summary>
-        </member>
         <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.PreferredHeight">
             <summary>
             Gets the preferred Button's height.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.DisabledBorderColor">
-            <summary>
-            Gets or sets the Button's border color when disabled.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.DisabledFillColor">
-            <summary>
-            Gets or sets the Button's background color when disabled.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.DisabledForecolor">
-            <summary>
-            Gets or sets the Button's foreground color when disabled.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonText">
-            <summary>
-            Gets or sets the text associated with this control.
             </summary>
         </member>
         <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.BackColor">
@@ -371,24 +311,19 @@
             [Internal] Gets or sets the initial Button's background color.
             </summary>
         </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.TextAlignment">
-            <summary>
-            Gets or sets the Button's text alignment.
-            </summary>
-        </member>
         <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.BackgroundImage">
             <summary>
             Gets or sets the Button's background image.
             </summary>
         </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.LeftIcon">
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.TextAlign">
             <summary>
-            Gets the left icon.
+            Gets or sets the Button's text alignment.
             </summary>
         </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.RightIcon">
+        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.CreateParams">
             <summary>
-            Gets the right icon.
+            Gets the list of created control parameters.
             </summary>
         </member>
         <member name="T:Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties">
@@ -485,85 +420,6 @@
             list of properties and their applied values.
             </summary>
         </member>
-        <member name="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.CreateParams">
-            <summary>
-            Gets the list of created control parameters.
-            </summary>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.Refresh">
-            <summary>
-            Redraws the control's layout.
-            </summary>
-            <param name="useTimer">Loop redraws using a timer?</param>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.Reset">
-            <summary>
-            Resets the control's temporary values to their defaults.
-            </summary>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.Reset(Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties)">
-            <summary>
-            Resets the button's current visual state to another state.
-            </summary>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.ResetColors">
-            <summary>
-            Resets the control's temporary color values to their defaults.
-            </summary>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.PerformClick">
-            <summary>
-            Generates a 'Click' event for the button.
-            </summary>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.AlignText">
-            <summary>
-            Aligns the button text.
-            </summary>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.AlignLefticon">
-            <summary>
-            Aligns the button's left icon.
-            </summary>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.AlignRighticon">
-            <summary>
-            Aligns the button's left icon.
-            </summary>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.NotifyDefault(System.Boolean)">
-            <summary>
-            Notifies the Button whether it is the default button 
-            so that it can adjust its appearance accordingly.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.GetCurrentState">
-            <summary>
-            Gets the Button's current activity state.
-            </summary>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.ApplyState(Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties)">
-            <summary>
-            Sets a specified state to the button.
-            </summary>
-            <param name="state">
-            The state to apply.
-            </param>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.GenerateColors(System.Boolean)">
-            <summary>
-            Generates colors for the the various states supported using 
-            the button's <see cref="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IdleFillColor"/> and 
-            <see cref="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IdleBorderColor"/> properties.
-            </summary>
-            <param name="invalidate">Redraw the control's surface?</param>
-        </member>
-        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.DrawRoundedRectangle(System.Drawing.Graphics,System.Drawing.Rectangle,System.Int32,System.Drawing.Pen,System.Drawing.Color)">
-            <summary>
-            Draws a rounded rectangle.
-            </summary>
-        </member>
         <member name="E:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IconLeftClick">
             <summary>
             Occurs when the Button's left icon is clicked.
@@ -573,6 +429,47 @@
             <summary>
             Occurs when the Button's right icon is clicked.
             </summary>
+        </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.GetCurrentState">
+            <summary>
+            Gets the Button's current activity state.
+            </summary>
+        </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.Refresh">
+            <summary>
+            Redraws the control's layout.
+            </summary>
+            <param name="useTimer">Loop redraws using a timer?</param>
+        </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.PerformClick">
+            <summary>
+            Generates a 'Click' event for the button.
+            </summary>
+        </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.Reset">
+            <summary>
+            Resets the control's temporary values to their defaults.
+            </summary>
+        </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.ResetColors">
+            <summary>
+            Resets the control's temporary color values to their defaults.
+            </summary>
+        </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.NotifyDefault(System.Boolean)">
+            <summary>
+            Notifies the Button whether it is the default button 
+            so that it can adjust its appearance accordingly.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Bunifu.UI.WinForms.BunifuButton.BunifuButton.GenerateColors(System.Boolean)">
+            <summary>
+            Generates colors for the the various states supported using 
+            the button's <see cref="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IdleFillColor"/> and 
+            <see cref="P:Bunifu.UI.WinForms.BunifuButton.BunifuButton.IdleBorderColor"/> properties.
+            </summary>
+            <param name="invalidate">Redraw the control's surface?</param>
         </member>
         <member name="T:Bunifu.UI.WinForms.BunifuButton.BunifuButton.BunifuButtonActionList">
             <summary>
@@ -601,22 +498,6 @@
             <summary> 
             Required method for Designer support - do not modify 
             the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Bunifu.UI.WinForms.Properties.Resources">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.Properties.Resources.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:Bunifu.UI.WinForms.Properties.Resources.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
             </summary>
         </member>
         <member name="T:Utilities.BunifuButton.Extensions.ColorExtensions">

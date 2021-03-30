@@ -6,8 +6,8 @@
     <members>
         <member name="T:Bunifu.UI.WinForms.BunifuToolTip">
             <summary>
-            Provides enhanced ToolTips with a set of customzation 
-            options to distinctly match your design needs.
+            Provides enhanced ToolTips with a set of customzation options
+            to help match your UI/UX design needs.
             </summary>
         </member>
         <member name="M:Bunifu.UI.WinForms.BunifuToolTip.#ctor">
@@ -1401,17 +1401,6 @@
             Converts the text to sentence-case.
             </summary>
         </member>
-        <member name="P:Utilities.BunifuToolTip.BunifuLabel.AllowParentOverrides">
-            <summary>
-            Gets or sets a value indicating whether the label will inherit 
-            its parent font and fore color properties.
-            </summary>
-        </member>
-        <member name="P:Utilities.BunifuToolTip.BunifuLabel.Text">
-            <summary>
-            Gets or sets the label text.
-            </summary>
-        </member>
         <member name="P:Utilities.BunifuToolTip.BunifuLabel.BackColor">
             <summary>
             Gets or sets the background color of the label.
@@ -1462,6 +1451,12 @@
             Determines the position of the text within the label.
             (This property is no longer supported. Please use 'TextAlignment' instead.)
             </summary>
+        </member>
+        <member name="P:Utilities.BunifuToolTip.BunifuLabel.CursorType">
+            <summary>
+            (Used instead of the "Cursor" property) Gets or sets the cursor that is displayed when the mouse pointer is over the control.
+            </summary>
+            <value>The cursor.</value>
         </member>
         <member name="P:Utilities.BunifuToolTip.BunifuLabel.Cursor">
             <summary>
@@ -1568,10 +1563,11 @@
             </summary>
             <value>The minimum size.</value>
         </member>
-        <member name="P:Utilities.BunifuToolTip.BunifuLabel.CursorType">
+        <member name="P:Utilities.BunifuToolTip.BunifuLabel.Text">
             <summary>
-            [Variant] Gets or sets the cursor that is displayed when the mouse pointer is over the control.
+            Gets or sets the label's text.
             </summary>
+            <value>The text.</value>
         </member>
         <member name="P:Utilities.BunifuToolTip.BunifuLabel.SelectedText">
             <summary>
@@ -1623,13 +1619,11 @@
             <param name="text"></param>
             <returns></returns>
         </member>
-        <member name="M:Utilities.BunifuToolTip.BunifuLabel.Render(System.Boolean)">
+        <member name="M:Utilities.BunifuToolTip.BunifuLabel.RenderText(System.Boolean)">
             <summary>
             Renders the text content in HTML format.
             </summary>
-            <param name="rightToLeft">
-            Render in RightToLeft (RTL) format?
-            </param>
+            <param name="isRTL">Render in RightToLeft (RTL) format? [true/false]</param>
         </member>
         <member name="M:Utilities.BunifuToolTip.BunifuLabel.WndProc(System.Windows.Forms.Message@)">
             <summary>
@@ -1749,26 +1743,9 @@
         </member>
         <member name="M:Utilities.BunifuToolTip.BunifuLabel.OnParentForeColorChanged(System.EventArgs)">
             <summary>
-            Raises the <see cref="E:System.Windows.Forms.Control.ForeColorChanged"/> 
-            event when the <see cref="P:System.Windows.Forms.Control.ForeColor" /> property 
-            value of the control's container changes.
+            Raises the <see cref="E:System.Windows.Forms.Control.ForeColorChanged" /> event when the <see cref="P:System.Windows.Forms.Control.ForeColor" /> property value of the control's container changes.
             </summary>
-            <param name="e">
-            An <see cref="T:System.EventArgs"/> 
-            that contains the event data.
-            </param>
-        </member>
-        <member name="M:Utilities.BunifuToolTip.BunifuLabel.OnParentFontChanged(System.EventArgs)">
-            <summary>
-            Raises the <see cref="M:Utilities.BunifuToolTip.BunifuLabel.OnParentFontChanged(System.EventArgs)"/> event 
-            when the parent font changes.
-            </summary>
-        </member>
-        <member name="M:Utilities.BunifuToolTip.BunifuLabel.OnParentChanged(System.EventArgs)">
-            <summary>
-            Raises the <see cref="M:Utilities.BunifuToolTip.BunifuLabel.OnParentChanged(System.EventArgs)"/> event 
-            when the parent control changes.
-            </summary>
+            <param name="e">An <see cref="T:System.EventArgs" /> that contains the event data.</param>
         </member>
         <member name="M:Utilities.BunifuToolTip.BunifuLabel.OnResize(System.EventArgs)">
             <summary>
