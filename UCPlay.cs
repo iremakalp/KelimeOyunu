@@ -82,7 +82,7 @@ namespace KelimeOyunu
                 {
                     timer1.Enabled = true;
                 }
-                soruLbl.Text = "Soru:" + sorular[sorusayisi];
+                soruLbl.Text =  sorular[sorusayisi];
                 sorusayisi++;
                 basla = false;
                 if (soru == 1)
@@ -275,7 +275,7 @@ namespace KelimeOyunu
             toplamp = 0;
             toplamPuan.Text = "Toplam Puan:" + toplamp;      
             timer2Lbl.Text = "04:00";
-            timer1Lbl.Text = "0:20";
+            timer1Lbl.Text = "20";
             sorusayisi = 0;
             soru = 1;
             timer1.Enabled = false;
@@ -332,83 +332,6 @@ namespace KelimeOyunu
             {
                 harf10Lbl.Text = alinanHarf.ToString();
             }
-        }
-        private void sonrakiBtn_Click_1(object sender, EventArgs e)
-        {
-            string tahmin = cevapTxt.Text;
-            if (tahmin.ToLower() == kelime.ToLower())
-            {
-                if (soru >= 15) //tum sorular cevaplandiysa calisan kisim
-                {
-                    toplamp += soruPuani;
-                    toplamPuanLbl.Text = "Toplam Puan " + " " + toplamp.ToString();
-                    MessageBox.Show("Oyun bitti." + "\n" + "İsim: " + UCHome.isim + "\n" + "Toplam Puanınız: " + toplamp + "\n" + "Kalan Süre: " + sure + "\n" + "Tarih:" + DateTime.Now.ToString());
-                    kisiEkle();
-                    txtaydet();
-                    scoreUpdate();
-                   
-                    timer1.Enabled = false;
-                    timer2.Enabled = false;
-                    UCHome uCHome = new UCHome(); //oyun bittiginde baslangic sayfasina geri doner
-                    addUserControl(uCHome);
-                    Home.guna2Panel1.Enabled = true;
-                    return;
-                }
-                toplamp += soruPuani;
-                toplamPuanLbl.Text = "Toplam Puan " + " " + toplamp.ToString();
-                yeniSoru();
-                cevapTxt.Text = "";
-                cevapTxt.Enabled = false;
-                timer2.Enabled = false;
-                timePanel1.Visible = false;
-                harfAlBtn.Enabled = true;
-                sonrakiBtn.Enabled = false;
-                cevapBtn.Enabled = true;
-                kalanSure = 20;
-            }
-            else
-            {
-                //yanlis bilirse calisacak kisim
-                MessageBox.Show(" Yanlış bildiniz! Cevap: " + kelime + " " + " Kazanılan Puan : 0");
-                cevapTxt.Text = "";
-                basla = true;
-                if (soru >= 15) // soruyu yanlis bilerek oyun biterse
-                {
-                    MessageBox.Show("Oyun bitti." + UCHome.isim + "\n" + "Toplam Puanınız : " + toplamp.ToString() + "\n" + " Kalan Süre:" + sure + "\n" + "Tarih:" + DateTime.Now.ToString());
-                    timer1.Enabled = false;
-                    timer2.Enabled = false;
-                    kisiEkle();
-                    txtaydet();
-                    scoreUpdate();
-                    
-                    UCHome uCHome = new UCHome(); //oyun bittiginde baslangic sayfasina geri doner
-                    addUserControl(uCHome);
-                    Home.guna2Panel1.Enabled = true;
-                    return;
-                }
-                toplamPuanLbl.Text = "Toplam Puan " + " " + toplamp.ToString();
-                yeniSoru();
-                cevapTxt.Text = "";
-                cevapTxt.Enabled = false;
-                timer2.Enabled = false;
-                timePanel1.Visible = false;
-                harfAlBtn.Enabled = true;
-                sonrakiBtn.Enabled = false;
-                cevapBtn.Enabled = true;
-                kalanSure = 20;
-                timer1.Enabled = true;
-            }
-        }
-        private void baslaBtn_Click_1(object sender, EventArgs e)
-        {
-            soruSec();
-            sansayac = 0; dksayac = 0;
-            basla = true;
-            timer1.Enabled = true;
-            yeniSoru();
-            timer2.Enabled = false;
-            Home.guna2Panel1.Enabled = false;
-
         }
         private void harfAlBtn_Click_1(object sender, EventArgs e)
         {
@@ -766,6 +689,83 @@ namespace KelimeOyunu
                         timer1.Enabled = false;
                         break;
                     }
+            }
+        }
+        private void baslaBtn_Click(object sender, EventArgs e)
+        {
+            soruSec();
+            sansayac = 0; dksayac = 0;
+            basla = true;
+            timer1.Enabled = true;
+            yeniSoru();
+            timer2.Enabled = false;
+            Home.guna2Panel1.Enabled = false;
+        }
+
+        private void sonrakiBtn_Click(object sender, EventArgs e)
+        {
+            string tahmin = cevapTxt.Text;
+            if (tahmin.ToLower() == kelime.ToLower())
+            {
+                if (soru >= 15) //tum sorular cevaplandiysa calisan kisim
+                {
+                    toplamp += soruPuani;
+                    toplamPuanLbl.Text = toplamp.ToString();
+                    MessageBox.Show("Oyun bitti." + "\n" + "İsim: " + UCHome.isim + "\n" + "Toplam Puanınız: " + toplamp + "\n" + "Kalan Süre: " + sure + "\n" + "Tarih:" + DateTime.Now.ToString());
+                    kisiEkle();
+                    txtaydet();
+                    scoreUpdate();
+                    timer1.Enabled = false;
+                    timer2.Enabled = false;
+                    UCHome uCHome = new UCHome(); //oyun bittiginde baslangic sayfasina geri doner
+                    addUserControl(uCHome);
+                    Home.guna2Panel1.Enabled = true;
+                    return;
+                }
+                toplamp += soruPuani;
+                toplamPuanLbl.Text = toplamp.ToString();
+                yeniSoru();
+                cevapTxt.Text = "";
+                cevapTxt.Enabled = false;
+                timer2.Enabled = false;
+                timePanel1.Visible = false;
+                harfAlBtn.Enabled = true;
+                sonrakiBtn.Visible = false;
+                cevapBtn.Enabled = true;
+                kalanSure = 20;
+            }
+            else
+            {
+                //yanlis bilirse calisacak kisim
+                MessageBox.Show(" Yanlış bildiniz! Kazanılan Puan : 0");
+                cevapTxt.Text = "";
+                basla = true;
+                sonrakiBtn.Visible = false;
+                cevapBtn.Enabled = true;
+                if (soru >= 15) // soruyu yanlis bilerek oyun biterse
+                {
+                    MessageBox.Show("Oyun bitti." + UCHome.isim + "\n" + "Toplam Puanınız : " + toplamp.ToString() + "\n" + " Kalan Süre:" + sure + "\n" + "Tarih:" + DateTime.Now.ToString());
+                    timer1.Enabled = false;
+                    timer2.Enabled = false;
+                    kisiEkle();
+                    txtaydet();
+                    scoreUpdate();
+                    UCHome uCHome = new UCHome(); //oyun bittiginde baslangic sayfasina geri doner
+                    addUserControl(uCHome);
+                    Home.guna2Panel1.Enabled = true;
+                    return;
+                }
+                toplamPuanLbl.Text = toplamp.ToString();
+                yeniSoru();
+                cevapTxt.Text = "";
+                cevapTxt.Enabled = false;
+                timer2.Enabled = false;
+                timePanel1.Visible = false;
+                harfAlBtn.Enabled = true;
+                sonrakiBtn.Enabled = false;
+                cevapBtn.Enabled = true;
+                kalanSure = 20;
+                timer1.Enabled = true;
             }
         }
         private void cevapBtn_Click_1(object sender, EventArgs e)

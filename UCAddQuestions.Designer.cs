@@ -31,12 +31,12 @@ namespace KelimeOyunu
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCAddQuestions));
             this.ucHomePanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.soruTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.kelimeTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.soruEkleBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.kelimeTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.soruTxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.ucHomePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,41 +58,45 @@ namespace KelimeOyunu
             this.ucHomePanel.Size = new System.Drawing.Size(766, 484);
             this.ucHomePanel.TabIndex = 0;
             // 
-            // guna2HtmlLabel1
+            // soruEkleBtn
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(64, 105);
-            this.guna2HtmlLabel1.MaximumSize = new System.Drawing.Size(600, 80);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(600, 62);
-            this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "Bu bölümde dilerseniz oyunda kullanılmak üzere soru ekleyebilirsiniz.";
+            this.soruEkleBtn.Animated = true;
+            this.soruEkleBtn.BorderRadius = 20;
+            this.soruEkleBtn.CheckedState.Parent = this.soruEkleBtn;
+            this.soruEkleBtn.CustomImages.Parent = this.soruEkleBtn;
+            this.soruEkleBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(12)))), ((int)(((byte)(50)))));
+            this.soruEkleBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.soruEkleBtn.ForeColor = System.Drawing.Color.White;
+            this.soruEkleBtn.HoverState.Parent = this.soruEkleBtn;
+            this.soruEkleBtn.Location = new System.Drawing.Point(394, 259);
+            this.soruEkleBtn.Name = "soruEkleBtn";
+            this.soruEkleBtn.ShadowDecoration.Parent = this.soruEkleBtn;
+            this.soruEkleBtn.Size = new System.Drawing.Size(105, 45);
+            this.soruEkleBtn.TabIndex = 8;
+            this.soruEkleBtn.Text = "Soru Ekle";
+            this.soruEkleBtn.Click += new System.EventHandler(this.soruEkleBtn_Click);
             // 
-            // soruTxt
+            // guna2HtmlLabel3
             // 
-            this.soruTxt.BorderRadius = 20;
-            this.soruTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.soruTxt.DefaultText = "";
-            this.soruTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.soruTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.soruTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.soruTxt.DisabledState.Parent = this.soruTxt;
-            this.soruTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.soruTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.soruTxt.FocusedState.Parent = this.soruTxt;
-            this.soruTxt.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.soruTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.soruTxt.HoverState.Parent = this.soruTxt;
-            this.soruTxt.Location = new System.Drawing.Point(156, 200);
-            this.soruTxt.Name = "soruTxt";
-            this.soruTxt.PasswordChar = '\0';
-            this.soruTxt.PlaceholderText = "";
-            this.soruTxt.SelectedText = "";
-            this.soruTxt.ShadowDecoration.Parent = this.soruTxt;
-            this.soruTxt.Size = new System.Drawing.Size(451, 36);
-            this.soruTxt.TabIndex = 1;
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(101)))), ((int)(((byte)(27)))));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(64, 278);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(64, 27);
+            this.guna2HtmlLabel3.TabIndex = 5;
+            this.guna2HtmlLabel3.Text = "Kelime";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(101)))), ((int)(((byte)(27)))));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(64, 209);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(43, 27);
+            this.guna2HtmlLabel2.TabIndex = 4;
+            this.guna2HtmlLabel2.Text = "Soru ";
             // 
             // kelimeTxt
             // 
@@ -118,45 +122,41 @@ namespace KelimeOyunu
             this.kelimeTxt.Size = new System.Drawing.Size(200, 36);
             this.kelimeTxt.TabIndex = 2;
             // 
-            // guna2HtmlLabel2
+            // soruTxt
             // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(64, 209);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(43, 27);
-            this.guna2HtmlLabel2.TabIndex = 4;
-            this.guna2HtmlLabel2.Text = "Soru ";
+            this.soruTxt.BorderRadius = 20;
+            this.soruTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.soruTxt.DefaultText = "";
+            this.soruTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.soruTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.soruTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.soruTxt.DisabledState.Parent = this.soruTxt;
+            this.soruTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.soruTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.soruTxt.FocusedState.Parent = this.soruTxt;
+            this.soruTxt.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.soruTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.soruTxt.HoverState.Parent = this.soruTxt;
+            this.soruTxt.Location = new System.Drawing.Point(156, 200);
+            this.soruTxt.Name = "soruTxt";
+            this.soruTxt.PasswordChar = '\0';
+            this.soruTxt.PlaceholderText = "";
+            this.soruTxt.SelectedText = "";
+            this.soruTxt.ShadowDecoration.Parent = this.soruTxt;
+            this.soruTxt.Size = new System.Drawing.Size(451, 36);
+            this.soruTxt.TabIndex = 1;
             // 
-            // guna2HtmlLabel3
+            // guna2HtmlLabel1
             // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(64, 278);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(64, 27);
-            this.guna2HtmlLabel3.TabIndex = 5;
-            this.guna2HtmlLabel3.Text = "Kelime";
-            // 
-            // soruEkleBtn
-            // 
-            this.soruEkleBtn.Animated = true;
-            this.soruEkleBtn.BorderRadius = 20;
-            this.soruEkleBtn.CheckedState.Parent = this.soruEkleBtn;
-            this.soruEkleBtn.CustomImages.Parent = this.soruEkleBtn;
-            this.soruEkleBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(12)))), ((int)(((byte)(50)))));
-            this.soruEkleBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.soruEkleBtn.ForeColor = System.Drawing.Color.White;
-            this.soruEkleBtn.HoverState.Parent = this.soruEkleBtn;
-            this.soruEkleBtn.Location = new System.Drawing.Point(394, 259);
-            this.soruEkleBtn.Name = "soruEkleBtn";
-            this.soruEkleBtn.ShadowDecoration.Parent = this.soruEkleBtn;
-            this.soruEkleBtn.Size = new System.Drawing.Size(105, 45);
-            this.soruEkleBtn.TabIndex = 8;
-            this.soruEkleBtn.Text = "Soru Ekle";
-            this.soruEkleBtn.Click += new System.EventHandler(this.soruEkleBtn_Click);
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(64, 105);
+            this.guna2HtmlLabel1.MaximumSize = new System.Drawing.Size(600, 80);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(600, 62);
+            this.guna2HtmlLabel1.TabIndex = 0;
+            this.guna2HtmlLabel1.Text = "Bu bölümde dilerseniz oyunda kullanılmak üzere soru ekleyebilirsiniz.";
             // 
             // UCAddQuestions
             // 
