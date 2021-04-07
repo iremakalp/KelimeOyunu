@@ -3,6 +3,6 @@ Ali İhsan Varol'un sunduğu Teve2 de yayınlanan Kelime Oyunu Yarışmasının 
 C# Programlama dili ile Visual Studio da hazırlanmıştır.
 Veritabanı Olarak MySQL Kullanılmıştır.
 ### Uygulamayı Visual Studio da Açma
-      1-) kelimeOyunuDb.sql dosyası Mysql Workbenchde çalıştırılır.
-      2-) Proje içinde bulunan baglanti() metodu içinde kullanıcı ve pwd kendi Mysql kkullanıcınız ve şifreniz olarak değiştirilir.
-      3-) Proje çalıştırılır.
+      KelimeOyunuDb.sql dosyası MySQL Workbenchde çalıştırılır
+      Proje içinde bulunan baglanti() metodu içinde kullanıcı ve pwd kendi Mysql kkullanıcınız ve şifreniz olarak değiştirilir
+      Proje çalıştırılır
