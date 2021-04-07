@@ -3,11 +3,12 @@
 Ali İhsan Varol'un sunduğu Teve2 de yayınlanan Kelime Oyunu Yarışmasının .NET FRAMEWORK Masaüstü Uygulaması
 C# Programlama dili ile Visual Studio da hazırlanmıştır.
 Veritabanı Olarak MySQL Kullanılmıştır.
+Projede her oyunu oynayan kullanıcı bilgisi bu klasörde txt dosyasında tutulur.
 
 ## _Kurulum_
 
     KelimeOyunuDb.sql dosyası MySQL Workbenchde çalıştırılır
-    Proje içinde bulunan baglanti() metodu içinde user ve pwd kendi Mysql kullanıcınız ve şifreniz olarak değiştirilir
+    Proje içinde bulunan baglanti() metodunda user ve pwd kendi Mysql kullanıcınız ve şifreniz olarak değiştirilir
     Proje çalıştırılır
     
 ## _Tasarım_
@@ -21,9 +22,11 @@ Veritabanı Olarak MySQL Kullanılmıştır.
 
 ## _Oyunu_ _Oynama_
 
-Başla butonuna basılarak 4 dakikalık süre başlar. Sırasıyla sorular gelir. Cevapla butonu ile soru cevaplanır.Kelimeyi tahmin edemiyorak harf al butonundan harf alınabilir.Soruyu cevaplaya bastıktan sonra 20 saniyelik bir süre başlar ve harf alma pasif hale gelir.
+Başla butonuna basılarak 4 dakikalık süre başlar. Sırasıyla sorular gelir. Cevapla butonu ile soru cevaplanır.Kelimeyi tahmin edemiyorsak harf al butonundan harf alınabilir.Soruyu cevaplaya bastıktan sonra 20 saniyelik bir süre başlar ve harf alma pasif hale gelir.
 
 ![image](https://user-images.githubusercontent.com/71495532/113905123-7ca8c780-97db-11eb-84bc-1e50ce3983d5.png)
 ![image](https://user-images.githubusercontent.com/71495532/113905229-98ac6900-97db-11eb-8746-3977dd39679a.png)
+![image](https://user-images.githubusercontent.com/71495532/113905535-ec1eb700-97db-11eb-9252-8ac6e3ea73d7.png)
+
 
 
