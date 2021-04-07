@@ -13,9 +13,7 @@ using System.Windows.Forms;
 namespace KelimeOyunu
 {
     public partial class UCPlay : UserControl
-    {
-        //referans http://www.gorselprogramlama.com/kelime-oyunu-csharp/
-        //referans http://www.gorselprogramlama.com/kelime-oyunu-programi-c-net/
+    {     
         MySqlConnection bag;
         MySqlCommand komut;
         MySqlDataReader dr;
