@@ -1,4 +1,4 @@
-# _Kelime_Oyunu_
+# _Kelime_ _Oyunu_
 
 Ali İhsan Varol'un sunduğu Teve2 de yayınlanan Kelime Oyunu Yarışmasının .NET FRAMEWORK Masaüstü Uygulaması
 C# Programlama dili ile Visual Studio da hazırlanmıştır.
