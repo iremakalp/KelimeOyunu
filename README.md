@@ -3,7 +3,7 @@
 Ali İhsan Varol'un sunduğu Teve2 de yayınlanan Kelime Oyunu Yarışmasının .NET FRAMEWORK Masaüstü Uygulaması
 C# Programlama dili ile Visual Studio da hazırlanmıştır.
 Veritabanı Olarak MySQL Kullanılmıştır.
-Projede her oyunu oynayan kullanıcı bilgisi bu klasörde txt dosyasında tutulur.
+Projede her oyunu oynayan kullanıcı bilgisi [bu klasörde](https://github.com/iremakalp/KelimeOyunu/tree/master/bin/Debug/Belgeler) txt dosyasında tutulur.
 
 ## _Kurulum_
 
