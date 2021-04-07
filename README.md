@@ -1,16 +1,16 @@
-# _Kelime_Oyunu
+# _Kelime_Oyunu_
 
 Ali İhsan Varol'un sunduğu Teve2 de yayınlanan Kelime Oyunu Yarışmasının .NET FRAMEWORK Masaüstü Uygulaması
 C# Programlama dili ile Visual Studio da hazırlanmıştır.
 Veritabanı Olarak MySQL Kullanılmıştır.
 
-## _Kurulum
+## _Kurulum_
 
     KelimeOyunuDb.sql dosyası MySQL Workbenchde çalıştırılır
     Proje içinde bulunan baglanti() metodu içinde user ve pwd kendi Mysql kullanıcınız ve şifreniz olarak değiştirilir
     Proje çalıştırılır
     
-## _Tasarım
+## _Tasarım_
 
  Oyunun anasayfasında kullanıcı adının girileceği bir textbox ve sol tarafta anasayfa, kurallar, en iyi oyuncular ve veritabanına soru ekleme bölümlerinden oluşan bir menü vardır 
          
