@@ -13,10 +13,8 @@ Veritabanı Olarak MySQL Kullanılmıştır.
 ## _Tasarım_
 
  Oyunun anasayfasında kullanıcı adının girileceği bir textbox ve sol tarafta anasayfa, kurallar, en iyi oyuncular ve veritabanına soru ekleme bölümlerinden oluşan bir menü vardır 
-         
-  ![image](https://user-images.githubusercontent.com/71495532/113892396-9bed2800-97ce-11eb-8244-25ddb61652a0.png)
-  ![image](https://user-images.githubusercontent.com/71495532/113904754-16bc4000-97db-11eb-952f-7af4482d3a2c.png)
-  ![image](https://user-images.githubusercontent.com/71495532/113904767-1a4fc700-97db-11eb-9f2b-0350565fa0c5.png)
-  ![image](https://user-images.githubusercontent.com/71495532/113904778-1d4ab780-97db-11eb-99cb-29ab318fb8f6.png)
-
-  
+ 
+ ![image](https://user-images.githubusercontent.com/71495532/113904935-43705780-97db-11eb-9273-61dcbf0fe825.png)
+ ![image](https://user-images.githubusercontent.com/71495532/113904939-45d2b180-97db-11eb-93e2-18f5d5b8a75e.png)
+ ![image](https://user-images.githubusercontent.com/71495532/113904950-49663880-97db-11eb-8941-dfb50a74cb1b.png)
+ ![image](https://user-images.githubusercontent.com/71495532/113904962-4d925600-97db-11eb-82d1-4f4537cb2880.png) 
