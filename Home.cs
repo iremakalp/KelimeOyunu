@@ -57,7 +57,17 @@ namespace KelimeOyunu
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialog = new DialogResult();
+            dialog = MessageBox.Show("Uygulama Kapatılsın mı?", "Bilgilendirme Penceresi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+               
+            }
+            
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

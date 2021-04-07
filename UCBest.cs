@@ -26,7 +26,7 @@ namespace KelimeOyunu
             bag = new MySqlConnection("Server=127.0.0.1;Database=kelimeoyunu;user=root;Pwd=1562;SslMode=none");
             bag.Open();
         }
-        public void oyuncuListele() // gonderen kişinin tüm faturalarını listeleme
+        public void oyuncuListele() 
         {
             baglanti();
             string komut = "SELECT İsim,Puan,KalanSure,Tarih FROM tbl_oyuncular ORDER BY Puan DESC limit 5";

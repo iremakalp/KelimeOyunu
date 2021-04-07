@@ -14,6 +14,8 @@ namespace KelimeOyunu
 {
     public partial class UCPlay : UserControl
     {
+        //referans http://www.gorselprogramlama.com/kelime-oyunu-csharp/
+        //referans http://www.gorselprogramlama.com/kelime-oyunu-programi-c-net/
         MySqlConnection bag;
         MySqlCommand komut;
         MySqlDataReader dr;
@@ -44,7 +46,7 @@ namespace KelimeOyunu
         }
         public void baglanti()
         {
-            bag = new MySqlConnection("Server=127.0.0.1;Database=kelimeoyunu;user=root;Pwd=1562;SslMode=none");
+            bag = new MySqlConnection("Server=127.0.0.1;Database=kelimeoyunu;user=root;Pwd=1562;SslMode=Required"); // https://mysqlconnector.net/troubleshooting/retrieval-public-key/
             bag.Open();
 
         } //veritabani baglantisi icin
@@ -286,6 +288,7 @@ namespace KelimeOyunu
             cevapBtn.Enabled = false;
             timer2.Enabled = false;
             timer2.Interval = 1000;
+            guna2GradientPanel1.Visible = false;
         }
         public void rasgeleHarf(int rasgeleHarf, char alinanHarf)
         {
@@ -700,6 +703,7 @@ namespace KelimeOyunu
             yeniSoru();
             timer2.Enabled = false;
             Home.guna2Panel1.Enabled = false;
+            guna2GradientPanel1.Visible = true;
         }
 
         private void sonrakiBtn_Click(object sender, EventArgs e)
@@ -766,6 +770,24 @@ namespace KelimeOyunu
                 cevapBtn.Enabled = true;
                 kalanSure = 20;
                 timer1.Enabled = true;
+            }
+        }
+        private void guna2GradientPanel1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = new DialogResult();
+            dialog = MessageBox.Show("Giriş Sayfasına Dönülsün mü?", "Bilgilendirme Penceresi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog == DialogResult.Yes)
+            {
+                kisiEkle();
+                txtaydet();
+                scoreUpdate();
+                UCHome uCHome = new UCHome(); //oyun bittiginde baslangic sayfasina geri doner
+                addUserControl(uCHome);
+                Home.guna2Panel1.Enabled = true;
+            }
+            else
+            {
+
             }
         }
         private void cevapBtn_Click_1(object sender, EventArgs e)

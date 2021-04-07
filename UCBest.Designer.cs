@@ -34,9 +34,9 @@ namespace KelimeOyunu
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dosyayaKaydetBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.oyuncularData = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dosyayaKaydetBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.oyuncularData)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +54,24 @@ namespace KelimeOyunu
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(766, 484);
             this.guna2Panel1.TabIndex = 1;
+            // 
+            // dosyayaKaydetBtn
+            // 
+            this.dosyayaKaydetBtn.BackColor = System.Drawing.Color.Transparent;
+            this.dosyayaKaydetBtn.BorderRadius = 28;
+            this.dosyayaKaydetBtn.CheckedState.Parent = this.dosyayaKaydetBtn;
+            this.dosyayaKaydetBtn.CustomImages.Parent = this.dosyayaKaydetBtn;
+            this.dosyayaKaydetBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dosyayaKaydetBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dosyayaKaydetBtn.ForeColor = System.Drawing.Color.White;
+            this.dosyayaKaydetBtn.HoverState.Parent = this.dosyayaKaydetBtn;
+            this.dosyayaKaydetBtn.Location = new System.Drawing.Point(538, 337);
+            this.dosyayaKaydetBtn.Name = "dosyayaKaydetBtn";
+            this.dosyayaKaydetBtn.ShadowDecoration.Parent = this.dosyayaKaydetBtn;
+            this.dosyayaKaydetBtn.Size = new System.Drawing.Size(154, 40);
+            this.dosyayaKaydetBtn.TabIndex = 11;
+            this.dosyayaKaydetBtn.Text = "Dosyaya Kaydet";
+            this.dosyayaKaydetBtn.Click += new System.EventHandler(this.dosyayaKaydetBtn_Click);
             // 
             // guna2HtmlLabel1
             // 
@@ -122,24 +140,6 @@ namespace KelimeOyunu
             this.oyuncularData.ThemeStyle.RowsStyle.Height = 22;
             this.oyuncularData.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(213)))), ((int)(((byte)(89)))));
             this.oyuncularData.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            // 
-            // dosyayaKaydetBtn
-            // 
-            this.dosyayaKaydetBtn.BackColor = System.Drawing.Color.Transparent;
-            this.dosyayaKaydetBtn.BorderRadius = 28;
-            this.dosyayaKaydetBtn.CheckedState.Parent = this.dosyayaKaydetBtn;
-            this.dosyayaKaydetBtn.CustomImages.Parent = this.dosyayaKaydetBtn;
-            this.dosyayaKaydetBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.dosyayaKaydetBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dosyayaKaydetBtn.ForeColor = System.Drawing.Color.White;
-            this.dosyayaKaydetBtn.HoverState.Parent = this.dosyayaKaydetBtn;
-            this.dosyayaKaydetBtn.Location = new System.Drawing.Point(538, 337);
-            this.dosyayaKaydetBtn.Name = "dosyayaKaydetBtn";
-            this.dosyayaKaydetBtn.ShadowDecoration.Parent = this.dosyayaKaydetBtn;
-            this.dosyayaKaydetBtn.Size = new System.Drawing.Size(154, 40);
-            this.dosyayaKaydetBtn.TabIndex = 11;
-            this.dosyayaKaydetBtn.Text = "Dosyaya Kaydet";
-            this.dosyayaKaydetBtn.Click += new System.EventHandler(this.dosyayaKaydetBtn_Click);
             // 
             // UCBest
             // 

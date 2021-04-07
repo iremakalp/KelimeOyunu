@@ -12,7 +12,6 @@ C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\obj\Debug\KelimeOyunu.exe
 C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\obj\Debug\KelimeOyunu.pdb
 C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\obj\Debug\KelimeOyunu.UCRules.resources
 C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\obj\Debug\KelimeOyunu.UCBest.resources
-C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\obj\Debug\KelimeOyunu.exe.config
 C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\bin\Debug\Google.Protobuf.dll
 C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\bin\Debug\K4os.Compression.LZ4.Streams.dll
@@ -31,3 +30,10 @@ C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\obj\Debug\KelimeOyunu.UCPlay.resou
 C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\obj\Debug\KelimeOyunu.UCAddQuestions.resources
 C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\obj\Debug\Interop.SpeechLib.dll
 C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\obj\Debug\KelimeOyunu.csproj.ResolveComReference.cache
+C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\bin\Debug\MySqlConnector.dll
+C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\bin\Debug\MySqlConnector.xml
+C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\bin\Debug\System.Buffers.xml
+C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\bin\Debug\System.Memory.xml
+C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\İrem Akalp\Source\Repos\KelimeOyunu\bin\Debug\System.Threading.Tasks.Extensions.xml

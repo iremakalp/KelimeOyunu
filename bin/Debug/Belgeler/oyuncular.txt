@@ -7,3 +7,6 @@
 İsim: Cenk  Puan: 8400 Kalan Süre: 01 : 23  Oynandığı Tarih: 30.03.2021 17:07:41
 İsim: Efe  Puan: 2400 Kalan Süre: 00 : 00  Oynandığı Tarih: 30.03.2021 17:35:58
 İsim: Dicle  Puan: 900 Kalan Süre: 03 : 22  Oynandığı Tarih: 30.03.2021 20:46:33
+İsim: Can  Puan: 400 Kalan Süre: 03 : 53  Oynandığı Tarih: 7.04.2021 11:58:56
+İsim: Zeynep  Puan: 800 Kalan Süre: 03 : 52  Oynandığı Tarih: 7.04.2021 12:00:50
+İsim: Gizem  Puan: 7900 Kalan Süre: 02 : 26  Oynandığı Tarih: 7.04.2021 16:29:15

@@ -48,10 +48,15 @@ namespace KelimeOyunu
             this.toplamPuan = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.soruPuan = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.ucHomePanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.toplamPuanLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.sonrakiBtn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.soruPuanLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.baslaBtn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.harf7Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.harfAlBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.cevapBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.soruLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.harf9Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -76,13 +81,11 @@ namespace KelimeOyunu
             this.timePanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.timer1Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cevapTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.toplamPuanLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.baslaBtn = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.sonrakiBtn = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.cevapBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.ucHomePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sonrakiBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baslaBtn)).BeginInit();
             this.guna2Panel7.SuspendLayout();
             this.guna2Panel9.SuspendLayout();
             this.guna2Panel10.SuspendLayout();
@@ -95,10 +98,6 @@ namespace KelimeOyunu
             this.guna2Panel1.SuspendLayout();
             this.timePanel2.SuspendLayout();
             this.timePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baslaBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sonrakiBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -258,12 +257,12 @@ namespace KelimeOyunu
             // ucHomePanel
             // 
             this.ucHomePanel.BackColor = System.Drawing.Color.Transparent;
+            this.ucHomePanel.Controls.Add(this.guna2GradientPanel1);
+            this.ucHomePanel.Controls.Add(this.toplamPuanLbl);
             this.ucHomePanel.Controls.Add(this.sonrakiBtn);
             this.ucHomePanel.Controls.Add(this.soruPuanLbl);
             this.ucHomePanel.Controls.Add(this.guna2PictureBox2);
             this.ucHomePanel.Controls.Add(this.baslaBtn);
-            this.ucHomePanel.Controls.Add(this.toplamPuanLbl);
-            this.ucHomePanel.Controls.Add(this.guna2PictureBox1);
             this.ucHomePanel.Controls.Add(this.guna2Panel7);
             this.ucHomePanel.Controls.Add(this.harfAlBtn);
             this.ucHomePanel.Controls.Add(this.cevapBtn);
@@ -287,17 +286,64 @@ namespace KelimeOyunu
             this.ucHomePanel.Size = new System.Drawing.Size(766, 484);
             this.ucHomePanel.TabIndex = 86;
             // 
+            // toplamPuanLbl
+            // 
+            this.toplamPuanLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(86)))), ((int)(((byte)(128)))));
+            this.toplamPuanLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.toplamPuanLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toplamPuanLbl.Location = new System.Drawing.Point(34, 178);
+            this.toplamPuanLbl.Name = "toplamPuanLbl";
+            this.toplamPuanLbl.Size = new System.Drawing.Size(13, 22);
+            this.toplamPuanLbl.TabIndex = 107;
+            this.toplamPuanLbl.Text = "0";
+            this.toplamPuanLbl.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sonrakiBtn
+            // 
+            this.sonrakiBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sonrakiBtn.BackgroundImage")));
+            this.sonrakiBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.sonrakiBtn.Location = new System.Drawing.Point(306, 340);
+            this.sonrakiBtn.Name = "sonrakiBtn";
+            this.sonrakiBtn.ShadowDecoration.Parent = this.sonrakiBtn;
+            this.sonrakiBtn.Size = new System.Drawing.Size(63, 57);
+            this.sonrakiBtn.TabIndex = 110;
+            this.sonrakiBtn.TabStop = false;
+            this.sonrakiBtn.Click += new System.EventHandler(this.sonrakiBtn_Click);
+            // 
             // soruPuanLbl
             // 
-            this.soruPuanLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(42)))), ((int)(((byte)(96)))));
-            this.soruPuanLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.soruPuanLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(149)))), ((int)(((byte)(42)))));
+            this.soruPuanLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.soruPuanLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.soruPuanLbl.Location = new System.Drawing.Point(10, 162);
+            this.soruPuanLbl.Location = new System.Drawing.Point(81, 217);
             this.soruPuanLbl.Name = "soruPuanLbl";
-            this.soruPuanLbl.Size = new System.Drawing.Size(41, 20);
+            this.soruPuanLbl.Size = new System.Drawing.Size(33, 22);
             this.soruPuanLbl.TabIndex = 28;
-            this.soruPuanLbl.Text = "Puan";
+            this.soruPuanLbl.Text = "400";
             this.soruPuanLbl.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.BackgroundImage")));
+            this.guna2PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(23, 158);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
+            this.guna2PictureBox2.Size = new System.Drawing.Size(109, 110);
+            this.guna2PictureBox2.TabIndex = 109;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // baslaBtn
+            // 
+            this.baslaBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("baslaBtn.BackgroundImage")));
+            this.baslaBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.baslaBtn.Location = new System.Drawing.Point(303, 340);
+            this.baslaBtn.Name = "baslaBtn";
+            this.baslaBtn.ShadowDecoration.Parent = this.baslaBtn;
+            this.baslaBtn.Size = new System.Drawing.Size(68, 62);
+            this.baslaBtn.TabIndex = 108;
+            this.baslaBtn.TabStop = false;
+            this.baslaBtn.Click += new System.EventHandler(this.baslaBtn_Click);
             // 
             // guna2Panel7
             // 
@@ -340,15 +386,33 @@ namespace KelimeOyunu
             this.harfAlBtn.Text = "Harf Al";
             this.harfAlBtn.Click += new System.EventHandler(this.harfAlBtn_Click_1);
             // 
+            // cevapBtn
+            // 
+            this.cevapBtn.BackColor = System.Drawing.Color.Transparent;
+            this.cevapBtn.CheckedState.Parent = this.cevapBtn;
+            this.cevapBtn.CustomImages.Parent = this.cevapBtn;
+            this.cevapBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(134)))), ((int)(((byte)(15)))));
+            this.cevapBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cevapBtn.ForeColor = System.Drawing.Color.White;
+            this.cevapBtn.HoverState.Parent = this.cevapBtn;
+            this.cevapBtn.Location = new System.Drawing.Point(477, 345);
+            this.cevapBtn.Name = "cevapBtn";
+            this.cevapBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.cevapBtn.ShadowDecoration.Parent = this.cevapBtn;
+            this.cevapBtn.Size = new System.Drawing.Size(82, 49);
+            this.cevapBtn.TabIndex = 87;
+            this.cevapBtn.Text = "Cevapla";
+            this.cevapBtn.Click += new System.EventHandler(this.cevapBtn_Click_1);
+            // 
             // soruLbl
             // 
             this.soruLbl.BackColor = System.Drawing.Color.Transparent;
-            this.soruLbl.Font = new System.Drawing.Font("Comic Sans MS", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.soruLbl.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.soruLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.soruLbl.Location = new System.Drawing.Point(99, 208);
+            this.soruLbl.Location = new System.Drawing.Point(138, 217);
             this.soruLbl.MaximumSize = new System.Drawing.Size(500, 50);
             this.soruLbl.Name = "soruLbl";
-            this.soruLbl.Size = new System.Drawing.Size(55, 26);
+            this.soruLbl.Size = new System.Drawing.Size(61, 29);
             this.soruLbl.TabIndex = 86;
             this.soruLbl.Text = "Soru :";
             // 
@@ -568,7 +632,7 @@ namespace KelimeOyunu
             this.timePanel2.Controls.Add(this.timer2Lbl);
             this.timePanel2.FillColor = System.Drawing.Color.Transparent;
             this.timePanel2.FillColor2 = System.Drawing.Color.Transparent;
-            this.timePanel2.Location = new System.Drawing.Point(487, 15);
+            this.timePanel2.Location = new System.Drawing.Point(636, 15);
             this.timePanel2.Name = "timePanel2";
             this.timePanel2.ShadowDecoration.Parent = this.timePanel2;
             this.timePanel2.Size = new System.Drawing.Size(116, 107);
@@ -595,7 +659,7 @@ namespace KelimeOyunu
             this.timePanel1.Controls.Add(this.timer1Lbl);
             this.timePanel1.FillColor = System.Drawing.Color.Transparent;
             this.timePanel1.FillColor2 = System.Drawing.Color.Transparent;
-            this.timePanel1.Location = new System.Drawing.Point(356, 25);
+            this.timePanel1.Location = new System.Drawing.Point(321, 25);
             this.timePanel1.Name = "timePanel1";
             this.timePanel1.ShadowDecoration.Parent = this.timePanel1;
             this.timePanel1.Size = new System.Drawing.Size(110, 81);
@@ -608,7 +672,7 @@ namespace KelimeOyunu
             this.timer1Lbl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.timer1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.timer1Lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.timer1Lbl.Location = new System.Drawing.Point(39, 31);
+            this.timer1Lbl.Location = new System.Drawing.Point(35, 29);
             this.timer1Lbl.MaximumSize = new System.Drawing.Size(200, 30);
             this.timer1Lbl.Name = "timer1Lbl";
             this.timer1Lbl.Size = new System.Drawing.Size(76, 30);
@@ -643,81 +707,20 @@ namespace KelimeOyunu
             this.cevapTxt.TabIndex = 91;
             this.cevapTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2PictureBox1
+            // guna2GradientPanel1
             // 
-            this.guna2PictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.BackgroundImage")));
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(609, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(145, 133);
-            this.guna2PictureBox1.TabIndex = 106;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // toplamPuanLbl
-            // 
-            this.toplamPuanLbl.BackColor = System.Drawing.Color.Silver;
-            this.toplamPuanLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.toplamPuanLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.toplamPuanLbl.Location = new System.Drawing.Point(628, 56);
-            this.toplamPuanLbl.Name = "toplamPuanLbl";
-            this.toplamPuanLbl.Size = new System.Drawing.Size(107, 22);
-            this.toplamPuanLbl.TabIndex = 107;
-            this.toplamPuanLbl.Text = "Toplam Puan";
-            this.toplamPuanLbl.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // baslaBtn
-            // 
-            this.baslaBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("baslaBtn.BackgroundImage")));
-            this.baslaBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.baslaBtn.Location = new System.Drawing.Point(303, 340);
-            this.baslaBtn.Name = "baslaBtn";
-            this.baslaBtn.ShadowDecoration.Parent = this.baslaBtn;
-            this.baslaBtn.Size = new System.Drawing.Size(68, 62);
-            this.baslaBtn.TabIndex = 108;
-            this.baslaBtn.TabStop = false;
-            this.baslaBtn.Click += new System.EventHandler(this.baslaBtn_Click);
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.BackgroundImage")));
-            this.guna2PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(3, 147);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(90, 79);
-            this.guna2PictureBox2.TabIndex = 109;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // sonrakiBtn
-            // 
-            this.sonrakiBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sonrakiBtn.BackgroundImage")));
-            this.sonrakiBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.sonrakiBtn.Location = new System.Drawing.Point(308, 345);
-            this.sonrakiBtn.Name = "sonrakiBtn";
-            this.sonrakiBtn.ShadowDecoration.Parent = this.sonrakiBtn;
-            this.sonrakiBtn.Size = new System.Drawing.Size(63, 49);
-            this.sonrakiBtn.TabIndex = 110;
-            this.sonrakiBtn.TabStop = false;
-            this.sonrakiBtn.Click += new System.EventHandler(this.sonrakiBtn_Click);
-            // 
-            // cevapBtn
-            // 
-            this.cevapBtn.BackColor = System.Drawing.Color.Transparent;
-            this.cevapBtn.CheckedState.Parent = this.cevapBtn;
-            this.cevapBtn.CustomImages.Parent = this.cevapBtn;
-            this.cevapBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(134)))), ((int)(((byte)(15)))));
-            this.cevapBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cevapBtn.ForeColor = System.Drawing.Color.White;
-            this.cevapBtn.HoverState.Parent = this.cevapBtn;
-            this.cevapBtn.Location = new System.Drawing.Point(477, 345);
-            this.cevapBtn.Name = "cevapBtn";
-            this.cevapBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.cevapBtn.ShadowDecoration.Parent = this.cevapBtn;
-            this.cevapBtn.Size = new System.Drawing.Size(82, 49);
-            this.cevapBtn.TabIndex = 87;
-            this.cevapBtn.Text = "Cevapla";
-            this.cevapBtn.Click += new System.EventHandler(this.cevapBtn_Click_1);
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2GradientPanel1.BackgroundImage")));
+            this.guna2GradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2GradientPanel1.BorderRadius = 20;
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(4, 15);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(70, 48);
+            this.guna2GradientPanel1.TabIndex = 111;
+            this.guna2GradientPanel1.Click += new System.EventHandler(this.guna2GradientPanel1_Click);
             // 
             // UCPlay
             // 
@@ -731,6 +734,9 @@ namespace KelimeOyunu
             this.Load += new System.EventHandler(this.UCPlay_Load);
             this.ucHomePanel.ResumeLayout(false);
             this.ucHomePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sonrakiBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baslaBtn)).EndInit();
             this.guna2Panel7.ResumeLayout(false);
             this.guna2Panel7.PerformLayout();
             this.guna2Panel9.ResumeLayout(false);
@@ -755,10 +761,6 @@ namespace KelimeOyunu
             this.timePanel2.PerformLayout();
             this.timePanel1.ResumeLayout(false);
             this.timePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baslaBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sonrakiBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -810,10 +812,10 @@ namespace KelimeOyunu
         private Guna.UI2.WinForms.Guna2HtmlLabel timer1Lbl;
         private Guna.UI2.WinForms.Guna2TextBox cevapTxt;
         private Guna.UI2.WinForms.Guna2HtmlLabel toplamPuanLbl;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox baslaBtn;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox sonrakiBtn;
         private Guna.UI2.WinForms.Guna2CircleButton cevapBtn;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
     }
 }
