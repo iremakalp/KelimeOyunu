@@ -18,3 +18,12 @@ Veritabanı Olarak MySQL Kullanılmıştır.
  ![image](https://user-images.githubusercontent.com/71495532/113904939-45d2b180-97db-11eb-93e2-18f5d5b8a75e.png)
  ![image](https://user-images.githubusercontent.com/71495532/113904950-49663880-97db-11eb-8941-dfb50a74cb1b.png)
  ![image](https://user-images.githubusercontent.com/71495532/113904962-4d925600-97db-11eb-82d1-4f4537cb2880.png) 
+
+## _Oyunu_ _Oynama_
+
+Başla butonuna basılarak 4 dakikalık süre başlar. Sırasıyla sorular gelir. Cevapla butonu ile soru cevaplanır.Kelimeyi tahmin edemiyorak harf al butonundan harf alınabilir.Soruyu cevaplaya bastıktan sonra 20 saniyelik bir süre başlar ve harf alma pasif hale gelir.
+
+![image](https://user-images.githubusercontent.com/71495532/113905123-7ca8c780-97db-11eb-84bc-1e50ce3983d5.png)
+![image](https://user-images.githubusercontent.com/71495532/113905229-98ac6900-97db-11eb-8746-3977dd39679a.png)
+
+
