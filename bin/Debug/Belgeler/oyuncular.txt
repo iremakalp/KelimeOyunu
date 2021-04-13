@@ -10,3 +10,4 @@
 İsim: Can  Puan: 400 Kalan Süre: 03 : 53  Oynandığı Tarih: 7.04.2021 11:58:56
 İsim: Zeynep  Puan: 800 Kalan Süre: 03 : 52  Oynandığı Tarih: 7.04.2021 12:00:50
 İsim: Gizem  Puan: 7900 Kalan Süre: 02 : 26  Oynandığı Tarih: 7.04.2021 16:29:15
+İsim: Ceren  Puan: 5900 Kalan Süre: 01 : 54  Oynandığı Tarih: 13.04.2021 12:37:38

@@ -23,7 +23,7 @@ namespace KelimeOyunu
         }
         public void baglanti()
         {
-            bag = new MySqlConnection("Server=127.0.0.1;Database=kelimeoyunu;user=root;Pwd=1562;SslMode=none");
+            bag = new MySqlConnection("Server=127.0.0.1;Database=kelimeoyunu;user=root;Pwd=1562;SslMode=Required");
             bag.Open();
         }
         public void oyuncuListele() 
