@@ -300,6 +300,7 @@ namespace KelimeOyunu
             this.guna2GradientPanel1.Size = new System.Drawing.Size(70, 48);
             this.guna2GradientPanel1.TabIndex = 111;
             this.guna2GradientPanel1.Click += new System.EventHandler(this.guna2GradientPanel1_Click);
+            this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
             // 
             // toplamPuanLbl
             // 

@@ -32,6 +32,7 @@ namespace KelimeOyunu
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.addBtn = new System.Windows.Forms.PictureBox();
             this.bestBtn = new System.Windows.Forms.PictureBox();
             this.rulesBtn = new System.Windows.Forms.PictureBox();
             this.homeBtn = new System.Windows.Forms.PictureBox();
@@ -42,31 +43,43 @@ namespace KelimeOyunu
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.addBtn = new System.Windows.Forms.PictureBox();
             guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bestBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulesBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
             guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             guna2Panel1.BorderRadius = 30;
-            guna2Panel1.Controls.Add(this.addBtn);
+           guna2Panel1.Controls.Add(this.addBtn);
             guna2Panel1.Controls.Add(this.bestBtn);
             guna2Panel1.Controls.Add(this.rulesBtn);
-            guna2Panel1.Controls.Add(homeBtn);
+           guna2Panel1.Controls.Add(this.homeBtn);
             guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(12)))), ((int)(((byte)(50)))));
             guna2Panel1.Location = new System.Drawing.Point(-4, -2);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.Parent = guna2Panel1;
-            guna2Panel1.Size = new System.Drawing.Size(113, 495);
+           guna2Panel1.Size = new System.Drawing.Size(113, 495);
             guna2Panel1.TabIndex = 0;
+            // 
+            // addBtn
+            // 
+            this.addBtn.BackColor = System.Drawing.Color.Transparent;
+            this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
+            this.addBtn.Location = new System.Drawing.Point(16, 321);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(59, 41);
+            this.addBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.addBtn.TabIndex = 5;
+            this.addBtn.TabStop = false;
+            this.addBtn.Tag = "Soru Ekle";
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // bestBtn
             // 
@@ -124,7 +137,7 @@ namespace KelimeOyunu
             // guna2DragControl1
             // 
             this.guna2DragControl1.ContainerControl = this;
-            this.guna2DragControl1.TargetControl = guna2Panel1;
+            this.guna2DragControl1.TargetControl =guna2Panel1;
             // 
             // guna2Panel2
             // 
@@ -168,19 +181,6 @@ namespace KelimeOyunu
             this.guna2DragControl2.ContainerControl = this;
             this.guna2DragControl2.TargetControl = this.guna2Panel2;
             // 
-            // addBtn
-            // 
-            this.addBtn.BackColor = System.Drawing.Color.Transparent;
-            this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
-            this.addBtn.Location = new System.Drawing.Point(16, 321);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(59, 41);
-            this.addBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.addBtn.TabIndex = 5;
-            this.addBtn.TabStop = false;
-            this.addBtn.Tag = "Soru Ekle";
-            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,20 +195,19 @@ namespace KelimeOyunu
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.addBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bestBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulesBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(homeBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homeBtn)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.PictureBox homeBtn;
-        public static Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.PictureBox bestBtn;
         private System.Windows.Forms.PictureBox rulesBtn;
         private Guna.UI2.WinForms.Guna2Panel ucHomePanel;
@@ -219,6 +218,7 @@ namespace KelimeOyunu
         private System.Windows.Forms.PictureBox pictureBox4;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
         private System.Windows.Forms.PictureBox addBtn;
+        public static Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }
 

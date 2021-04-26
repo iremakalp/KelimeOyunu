@@ -808,6 +808,11 @@ namespace KelimeOyunu
             cevapBtn.Enabled = false;
         }
 
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         // 4 dakika icin calisan timer
         private void timer1_Tick(object sender, EventArgs e)
         {
