@@ -48,6 +48,7 @@ namespace KelimeOyunu
             this.toplamPuan = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.soruPuan = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.ucHomePanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.toplamPuanLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.sonrakiBtn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.soruPuanLbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -81,7 +82,6 @@ namespace KelimeOyunu
             this.timePanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.timer1Lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cevapTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.ucHomePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sonrakiBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -286,6 +286,21 @@ namespace KelimeOyunu
             this.ucHomePanel.Size = new System.Drawing.Size(766, 484);
             this.ucHomePanel.TabIndex = 86;
             // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2GradientPanel1.BackgroundImage")));
+            this.guna2GradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2GradientPanel1.BorderRadius = 20;
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(4, 15);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(70, 48);
+            this.guna2GradientPanel1.TabIndex = 111;
+            this.guna2GradientPanel1.Click += new System.EventHandler(this.guna2GradientPanel1_Click);
+            // 
             // toplamPuanLbl
             // 
             this.toplamPuanLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(86)))), ((int)(((byte)(128)))));
@@ -407,12 +422,12 @@ namespace KelimeOyunu
             // soruLbl
             // 
             this.soruLbl.BackColor = System.Drawing.Color.Transparent;
-            this.soruLbl.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.soruLbl.Font = new System.Drawing.Font("Comic Sans MS", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.soruLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.soruLbl.Location = new System.Drawing.Point(138, 217);
             this.soruLbl.MaximumSize = new System.Drawing.Size(500, 50);
             this.soruLbl.Name = "soruLbl";
-            this.soruLbl.Size = new System.Drawing.Size(61, 29);
+            this.soruLbl.Size = new System.Drawing.Size(55, 26);
             this.soruLbl.TabIndex = 86;
             this.soruLbl.Text = "Soru :";
             // 
@@ -706,21 +721,6 @@ namespace KelimeOyunu
             this.cevapTxt.Size = new System.Drawing.Size(225, 44);
             this.cevapTxt.TabIndex = 91;
             this.cevapTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // guna2GradientPanel1
-            // 
-            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2GradientPanel1.BackgroundImage")));
-            this.guna2GradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2GradientPanel1.BorderRadius = 20;
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(4, 15);
-            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(70, 48);
-            this.guna2GradientPanel1.TabIndex = 111;
-            this.guna2GradientPanel1.Click += new System.EventHandler(this.guna2GradientPanel1_Click);
             // 
             // UCPlay
             // 

@@ -40,7 +40,8 @@ namespace KelimeOyunu
                 }
                 MessageBox.Show("Yeni sorunuz kaydedildi !");
                 bag.Close();
-
+                soruTxt.Text = "";
+                kelimeTxt.Text = "";
             }
             catch (Exception ex)
             {

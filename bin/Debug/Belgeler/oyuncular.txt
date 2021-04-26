@@ -1,4 +1,3 @@
-
 İsim: İrem  Puan: 9800 Kalan Süre: 02 : 23  Oynandığı Tarih: 28.03.2021 16:49:24
 İsim: Hasan  Puan: 0 Kalan Süre: 00 : 00  Oynandığı Tarih: 28.03.2021 17:53:25
 İsim: Cansu  Puan: 7700 Kalan Süre: 02 : 30  Oynandığı Tarih: 29.03.2021 17:56:54
@@ -11,3 +10,9 @@
 İsim: Zeynep  Puan: 800 Kalan Süre: 03 : 52  Oynandığı Tarih: 7.04.2021 12:00:50
 İsim: Gizem  Puan: 7900 Kalan Süre: 02 : 26  Oynandığı Tarih: 7.04.2021 16:29:15
 İsim: Ceren  Puan: 5900 Kalan Süre: 01 : 54  Oynandığı Tarih: 13.04.2021 12:37:38
+İsim: Melek  Puan: 1000 Kalan Süre: 03 : 24  Oynandığı Tarih: 25.04.2021 21:37:21
+İsim: melek  Puan: 1400 Kalan Süre: 03 : 44  Oynandığı Tarih: 26.04.2021 00:09:39
+İsim: melek  Puan: 700 Kalan Süre: 03 : 53  Oynandığı Tarih: 26.04.2021 00:11:49
+İsim: mahsun  Puan: 0 Kalan Süre: 03 : 44  Oynandığı Tarih: 26.04.2021 00:16:28
+İsim: mahsun  Puan: 0 Kalan Süre: 03 : 52  Oynandığı Tarih: 26.04.2021 00:17:25
+İsim: mahmut  Puan: 400 Kalan Süre: 03 : 52  Oynandığı Tarih: 26.04.2021 11:32:04
