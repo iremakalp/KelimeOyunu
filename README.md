@@ -20,7 +20,7 @@ Projede her oyunu oynayan kullanıcı bilgisi [bu klasörde](https://github.com/
  ![image](https://user-images.githubusercontent.com/71495532/113904950-49663880-97db-11eb-8941-dfb50a74cb1b.png) 
  ![image](https://user-images.githubusercontent.com/71495532/113904962-4d925600-97db-11eb-82d1-4f4537cb2880.png) 
 
-## _Oyunu_ _Oynama_
+## _Play_
 
 Başla butonuna basılarak 4 dakikalık süre başlar. Sırasıyla sorular gelir. Cevapla butonu ile soru cevaplanır.Kelimeyi tahmin edemiyorsak harf al butonundan harf alınabilir.Soruyu cevaplaya bastıktan sonra 20 saniyelik bir süre başlar ve harf alma pasif hale gelir.
 
